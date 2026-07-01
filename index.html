@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juan Díaz — Reliability Engineer</title>
+<meta name="description" content="Industrial engineer bridging maintenance, controls, and AI-driven reliability. Explore live reliability calculators and project logs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scanline" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <span class="led led-on" aria-hidden="true"></span>
+      JD<span class="nav-brand-sub">/RELIABILITY</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#log">Log</a>
+      <a href="#panel">Skills</a>
+      <a href="#tools">Tools</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <p class="eyebrow"><span class="led led-on"></span> STATUS: OPERATIONAL</p>
+      <h1 class="hero-title">Juan Díaz</h1>
+      <p class="hero-role">Maintenance &amp; Controls Engineer<br>— building toward Reliability Engineering</p>
+      <p class="hero-desc">
+        Industrial engineer with two decades across maintenance, quality, and process control.
+        Now combining that field experience with data analysis and AI to make equipment failure
+        predictable instead of surprising.
+      </p>
+      <div class="hero-cta">
+        <a href="#tools" class="btn btn-primary">View reliability tools</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hmi-card" id="uptime-card">
+        <div class="hmi-card-head">
+          <span class="hmi-card-label">CAREER RUNTIME METER</span>
+          <span class="led led-on pulse" aria-hidden="true"></span>
+        </div>
+        <div class="hmi-readout" id="uptime-readout">
+          <div class="hmi-days">
+            <span id="uptime-days">0000</span>
+            <span class="hmi-unit">days</span>
+          </div>
+          <div class="hmi-clock" id="uptime-clock">00:00:00</div>
+        </div>
+        <div class="hmi-card-foot">
+          <span>RUNNING SINCE 1999-01</span>
+          <span class="hmi-tag">NO UNPLANNED DOWNTIME</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE LOG -->
+<section id="log" class="section">
+  <div class="section-inner">
+    <p class="section-eyebrow">WORK ORDER LOG</p>
+    <h2 class="section-title">Field history</h2>
+    <p class="section-sub">Two decades of entries — from mechanical fundamentals to AI-assisted diagnostics.</p>
+
+    <div class="log-list">
+
+      <article class="log-entry">
+        <div class="log-meta">
+          <span class="log-date">1999</span>
+          <span class="log-ticket">#EDU-01</span>
+        </div>
+        <div class="log-body">
+          <h3>Industrial Engineering, Universidad Santa María</h3>
+          <p>Graduated in Venezuela. Early career spanned plastics manufacturing, facilities maintenance,
+             petroleum contract administration, food production, and hospitality — a wide base before
+             specializing.</p>
+        </div>
+      </article>
+
+      <article class="log-entry">
+        <div class="log-meta">
+          <span class="log-date">2015</span>
+          <span class="log-ticket">#REL-02</span>
+        </div>
+        <div class="log-body">
+          <h3>Relocation to the United States</h3>
+          <p>Moved to North Carolina and re-entered the trade from the floor up, rebuilding a career in
+             a new industrial system and a new language.</p>
+        </div>
+      </article>
+
+      <article class="log-entry">
+        <div class="log-meta">
+          <span class="log-date">2016–2020</span>
+          <span class="log-ticket">#MTC-03</span>
+        </div>
+        <div class="log-body">
+          <h3>Maintenance Technician, Cosmetics Manufacturing</h3>
+          <p>Five years keeping production equipment running — hands-on mechanical and electrical
+             troubleshooting on high-mix manufacturing lines.</p>
+        </div>
+      </article>
+
+      <article class="log-entry">
+        <div class="log-meta">
+          <span class="log-date">2020–present</span>
+          <span class="log-ticket">#CTL-04</span>
+        </div>
+        <div class="log-body">
+          <h3>Maintenance &amp; Controls Engineer, Specialty Nonwovens</h3>
+          <p>Progressed from maintenance engineer to controls engineer on a high-speed nonwovens line.
+             Siemens S7 PLC programming, SCADA/HMI systems, VFDs, safety circuits — and the on-call pager
+             that comes with all of it.</p>
+        </div>
+      </article>
+
+      <article class="log-entry log-entry-active">
+        <div class="log-meta">
+          <span class="log-date">2025–now</span>
+          <span class="log-ticket">#REL-05</span>
+        </div>
+        <div class="log-body">
+          <h3>Transition into Reliability Engineering</h3>
+          <p>Rebuilding failure data into structured reliability analysis — Weibull models, FMEA
+             libraries, RPN scoring — and pairing it with AI tooling that helps technicians diagnose
+             faster instead of guessing.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS PANEL -->
+<section id="panel" class="section section-alt">
+  <div class="section-inner">
+    <p class="section-eyebrow">INSTRUMENTATION PANEL</p>
+    <h2 class="section-title">What's under the hood</h2>
+
+    <div class="panel-grid">
+
+      <div class="panel-card">
+        <div class="panel-card-head">
+          <span class="panel-index">MTC</span>
+          <h3>Maintenance &amp; Controls</h3>
+        </div>
+        <ul class="tag-list">
+          <li>Siemens S7-300 / S7-1200 PLC</li>
+          <li>SCADA / CitectSCADA / HMI</li>
+          <li>PROFIBUS &amp; PROFINET</li>
+          <li>VFDs &amp; motor control</li>
+          <li>Safety PLC &amp; interlock systems</li>
+          <li>Mechanical &amp; electrical troubleshooting</li>
+        </ul>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-card-head">
+          <span class="panel-index">REL</span>
+          <h3>Reliability &amp; Data</h3>
+        </div>
+        <ul class="tag-list">
+          <li>FMEA (S/O/D, RPN scoring)</li>
+          <li>Weibull &amp; MTBF/MTTR analysis</li>
+          <li>Failure mode taxonomy design</li>
+          <li>Pareto &amp; downtime root-cause</li>
+          <li>KPI dashboards</li>
+          <li>SQL / structured data pipelines</li>
+        </ul>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-card-head">
+          <span class="panel-index">AI</span>
+          <h3>AI &amp; Automation</h3>
+        </div>
+        <ul class="tag-list">
+          <li>AI-assisted diagnostic assistants</li>
+          <li>Automated shift-note parsing</li>
+          <li>Python monitoring &amp; alerting scripts</li>
+          <li>LLM-powered knowledge retrieval</li>
+          <li>Dashboard &amp; tool prototyping</li>
+          <li>Process documentation as data</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools" class="section">
+  <div class="section-inner">
+    <p class="section-eyebrow">LIVE INSTRUMENTS</p>
+    <h2 class="section-title">Reliability tools</h2>
+    <p class="section-sub">Two working calculators, plus a look at larger systems built on the same ideas.</p>
+
+    <div class="tools-grid">
+
+      <!-- MTBF Calculator -->
+      <div class="hmi-card tool-card">
+        <div class="hmi-card-head">
+          <span class="hmi-card-label">MTBF / MTTR / AVAILABILITY</span>
+          <span class="led led-on" id="mtbf-led"></span>
+        </div>
+
+        <div class="tool-body">
+          <label class="field">
+            <span>Total operating time (hrs)</span>
+            <input type="number" id="mtbf-runtime" value="8760" min="0" step="1">
+          </label>
+          <label class="field">
+            <span>Number of failures</span>
+            <input type="number" id="mtbf-failures" value="12" min="0" step="1">
+          </label>
+          <label class="field">
+            <span>Total downtime (hrs)</span>
+            <input type="number" id="mtbf-downtime" value="36" min="0" step="0.1">
+          </label>
+        </div>
+
+        <div class="tool-output">
+          <div class="output-cell">
+            <span class="output-label">MTBF</span>
+            <span class="output-value" id="out-mtbf">—</span>
+            <span class="output-unit">hrs</span>
+          </div>
+          <div class="output-cell">
+            <span class="output-label">MTTR</span>
+            <span class="output-value" id="out-mttr">—</span>
+            <span class="output-unit">hrs</span>
+          </div>
+          <div class="output-cell">
+            <span class="output-label">Availability</span>
+            <span class="output-value" id="out-availability">—</span>
+            <span class="output-unit">%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weibull Calculator -->
+      <div class="hmi-card tool-card">
+        <div class="hmi-card-head">
+          <span class="hmi-card-label">WEIBULL RELIABILITY R(t)</span>
+          <span class="led led-on" id="weibull-led"></span>
+        </div>
+
+        <div class="tool-body">
+          <label class="field">
+            <span>Shape parameter β</span>
+            <input type="number" id="wb-beta" value="2.2" min="0.1" step="0.1">
+          </label>
+          <label class="field">
+            <span>Scale parameter η (hrs)</span>
+            <input type="number" id="wb-eta" value="4000" min="1" step="10">
+          </label>
+          <label class="field">
+            <span>Time t (hrs)</span>
+            <input type="number" id="wb-t" value="2000" min="0" step="10">
+          </label>
+        </div>
+
+        <div class="tool-output">
+          <div class="output-cell output-cell-wide">
+            <span class="output-label">R(t) — probability of survival</span>
+            <span class="output-value" id="out-rt">—</span>
+            <span class="output-unit">%</span>
+          </div>
+        </div>
+        <div class="wb-bar-track">
+          <div class="wb-bar-fill" id="wb-bar-fill"></div>
+        </div>
+        <p class="tool-note" id="wb-note">—</p>
+      </div>
+
+    </div>
+
+    <!-- Showcase cards -->
+    <div class="showcase-list">
+
+      <article class="showcase-card">
+        <div class="showcase-meta">
+          <span class="log-ticket">SYSTEM</span>
+          <span class="showcase-status">In production</span>
+        </div>
+        <h3>AI-assisted diagnostic assistant</h3>
+        <p>A chat-based troubleshooting tool built for a high-speed nonwovens production line. Technicians
+           describe a symptom; the assistant cross-references equipment manuals, wiring drawings, and
+           historical failure notes to suggest likely causes and next checks — cutting diagnosis time on
+           recurring faults.</p>
+        <ul class="showcase-tags">
+          <li>LLM + knowledge base</li>
+          <li>Multi-cabinet coverage</li>
+          <li>Drawing lookup</li>
+        </ul>
+      </article>
+
+      <article class="showcase-card">
+        <div class="showcase-meta">
+          <span class="log-ticket">LIBRARY</span>
+          <span class="showcase-status">168 entries</span>
+        </div>
+        <h3>FMEA &amp; RPN failure library</h3>
+        <p>A standardized failure-mode taxonomy spanning nine equipment categories, scored on severity,
+           occurrence, and detection to prioritize maintenance attention where it actually reduces risk —
+           not just where it's loudest.</p>
+        <ul class="showcase-tags">
+          <li>Severity / Occurrence / Detection</li>
+          <li>RPN prioritization</li>
+          <li>9 failure categories</li>
+        </ul>
+      </article>
+
+      <article class="showcase-card">
+        <div class="showcase-meta">
+          <span class="log-ticket">ANALYSIS</span>
+          <span class="showcase-status">Correction found</span>
+        </div>
+        <h3>Reliability analytics dashboard</h3>
+        <p>Built a Pareto, Weibull, and KPI dashboard from months of production stop data. Along the way,
+           corrected a reliability formula that had been silently overstating performance — the honest
+           number was roughly half of what was being reported, which reopened the conversation about
+           where maintenance hours actually belonged.</p>
+        <ul class="showcase-tags">
+          <li>Weibull analysis</li>
+          <li>Pareto root-cause</li>
+          <li>KPI dashboard</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section section-alt">
+  <div class="section-inner section-inner-narrow">
+    <p class="section-eyebrow">OPEN CHANNEL</p>
+    <h2 class="section-title">Let's talk reliability</h2>
+    <p class="section-sub">
+      Open to reliability engineering roles, and always glad to compare notes with anyone working the
+      maintenance-to-data side of manufacturing.
+    </p>
+    <div class="contact-row">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="btn btn-primary">LinkedIn</a>
+      <a href="mailto:your-email@example.com" class="btn btn-ghost">Email</a>
+    </div>
+    <p class="contact-hint">— update the LinkedIn and email links above with your own before publishing.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Juan Díaz</span>
+    <span class="footer-status"><span class="led led-on"></span> All systems nominal</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
