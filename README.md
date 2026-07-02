@@ -5,10 +5,11 @@ Static site — no build step required. Files:
 - `index.html` — page structure and content
 - `style.css` — design system (dark HMI-inspired theme)
 - `script.js` — career uptime counter + MTBF/MTTR and Weibull calculators
+- `assets/juan-photo.jpg` — hero photo (keep this filename, or update the `src` in `index.html` if you rename it)
 
 ## Publish with GitHub Pages
 
-1. Push these three files to the root of your repository (or into a `/docs` folder if you prefer).
+1. Push these files to the root of your repository, **keeping the `assets` folder intact** (or into a `/docs` folder if you prefer — just keep the same relative structure).
 2. In your GitHub repo: **Settings → Pages**.
 3. Under **Build and deployment → Source**, choose **Deploy from a branch**.
 4. Pick the branch (usually `main`) and the folder (`/root` or `/docs`, matching where you put the files).

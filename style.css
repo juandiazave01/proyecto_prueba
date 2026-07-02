@@ -178,6 +178,43 @@ a { color: inherit; text-decoration: none; }
   gap: 64px;
   align-items: center;
 }
+.id-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 8px 16px 8px 8px;
+  margin-bottom: 24px;
+}
+.id-photo {
+  width: 44px;
+  height: 44px;
+  border-radius: 2px;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid var(--accent-dim);
+  filter: grayscale(15%) contrast(1.05);
+}
+.id-badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--font-mono);
+}
+.id-badge-name {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text);
+}
+.id-badge-role {
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -426,6 +463,52 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================
+   GALLERY
+   ============================================ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.gallery-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.gallery-card:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+}
+.gallery-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  color: var(--accent);
+}
+.gallery-icon svg { width: 100%; height: 100%; }
+.gallery-card h3 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+.gallery-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+.gallery-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+/* ============================================
    TOOLS
    ============================================ */
 .tools-grid {
@@ -627,6 +710,7 @@ a { color: inherit; text-decoration: none; }
   .panel-grid { grid-template-columns: 1fr; }
   .tools-grid { grid-template-columns: 1fr; }
   .showcase-list { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .log-entry { grid-template-columns: 1fr; gap: 8px; }
   .nav-links { display: none; }
   .tool-card .tool-body { grid-template-columns: 1fr; }
