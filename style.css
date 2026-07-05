@@ -181,16 +181,16 @@ a { color: inherit; text-decoration: none; }
 .id-badge {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   background: var(--bg-panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 8px 16px 8px 8px;
+  padding: 10px 22px 10px 10px;
   margin-bottom: 24px;
 }
 .id-photo {
-  width: 44px;
-  height: 44px;
+  width: 84px;
+  height: 84px;
   border-radius: 2px;
   object-fit: cover;
   object-position: top center;
@@ -200,17 +200,17 @@ a { color: inherit; text-decoration: none; }
 .id-badge-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
   font-family: var(--font-mono);
 }
 .id-badge-name {
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.03em;
   color: var(--text);
 }
 .id-badge-role {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--text-dim);
   letter-spacing: 0.05em;
 }
