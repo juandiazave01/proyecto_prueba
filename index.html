@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juan Díaz — Reliability Engineer</title>
+<meta name="description" content="Industrial engineer bridging maintenance, controls, and AI-driven reliability. Explore live reliability calculators and project logs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scanline" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="led led-on" aria-hidden="true"></span>
+      JD<span class="nav-brand-sub">/RELIABILITY</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#panel">Skills</a>
+      <a href="#ai">AI</a>
+      <div class="nav-dropdown">
+        <a href="#gallery">Gallery <span class="nav-caret">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="#gallery" data-tab="nonwoven">Nonwoven Plant</a>
+          <a href="#gallery" data-tab="line4">Line 4</a>
+        </div>
+      </div>
+      <a href="#tools">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="education.html">Education</a>
+    </nav>
+  </div>
+</header>
+
+<!-- SKILLS PANEL -->
+<section id="panel" class="section section-alt">
+  <div class="section-inner">
+    <p class="section-eyebrow">INSTRUMENTATION PANEL</p>
+    <h2 class="section-title">What's under the hood</h2>
+
+    <div class="panel-grid">
+
+      <div class="panel-card">
+        <div class="panel-card-head">
+          <span class="panel-index">MTC</span>
+          <h3>Maintenance &amp; Controls</h3>
+        </div>
+        <ul class="tag-list">
+          <li>Siemens S7-300 / S7-1200 PLC</li>
+          <li>SCADA / CitectSCADA / HMI</li>
+          <li>PROFIBUS &amp; PROFINET</li>
+          <li>VFDs &amp; motor control</li>
+          <li>Safety PLC &amp; interlock systems</li>
+          <li>Mechanical &amp; electrical troubleshooting</li>
+        </ul>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-card-head">
+          <span class="panel-index">REL</span>
+          <h3>Reliability &amp; Data</h3>
+        </div>
+        <ul class="tag-list">
+          <li>FMEA (S/O/D, RPN scoring)</li>
+          <li>Weibull &amp; MTBF/MTTR analysis</li>
+          <li>Failure mode taxonomy design</li>
+          <li>Pareto &amp; downtime root-cause</li>
+          <li>KPI dashboards</li>
+          <li>SQL / structured data pipelines</li>
+        </ul>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-card-head">
+          <span class="panel-index">AI</span>
+          <h3>AI &amp; Automation</h3>
+        </div>
+        <ul class="tag-list">
+          <li>AI-assisted diagnostic assistants</li>
+          <li>Automated shift-note parsing</li>
+          <li>Python monitoring &amp; alerting scripts</li>
+          <li>LLM-powered knowledge retrieval</li>
+          <li>Dashboard &amp; tool prototyping</li>
+          <li>Process documentation as data</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AI TOOLKIT -->
+<section id="ai" class="section">
+  <div class="section-inner">
+    <p class="section-eyebrow">PROCESSING LAYER</p>
+    <h2 class="section-title">AI-assisted engineering</h2>
+    <p class="section-sub">
+      The same instinct that reads a failure pattern on the floor now reads it in data —
+      AI is the layer that connects the two faster than either could alone.
+    </p>
+
+    <div class="showcase-list">
+
+      <article class="showcase-card">
+        <div class="showcase-meta">
+          <span class="log-ticket">ASSISTANT</span>
+          <span class="showcase-status">Claude-powered</span>
+        </div>
+        <h3>Claude-powered diagnostic tools</h3>
+        <p>Chat-based assistants built on Claude that give technicians a fast second opinion —
+           cross-referencing equipment history, wiring drawings, and shift notes to narrow down a
+           fault before a wrench ever comes out.</p>
+        <ul class="showcase-tags">
+          <li>Claude API</li>
+          <li>Knowledge retrieval</li>
+          <li>Multi-system context</li>
+        </ul>
+      </article>
+
+      <article class="showcase-card">
+        <div class="showcase-meta">
+          <span class="log-ticket">SCRIPTING</span>
+          <span class="showcase-status">Python</span>
+        </div>
+        <h3>Python + AI automation</h3>
+        <p>Scripts that watch PLC data in real time and flag abnormal conditions before they become
+           downtime — plus AI-assisted parsing of shift notes and reports so nothing useful gets lost
+           in a wall of text.</p>
+        <ul class="showcase-tags">
+          <li>Real-time monitoring</li>
+          <li>Automated alerts</li>
+          <li>Text/report parsing</li>
+        </ul>
+      </article>
+
+      <article class="showcase-card">
+        <div class="showcase-meta">
+          <span class="log-ticket">APPROACH</span>
+          <span class="showcase-status">Workflow</span>
+        </div>
+        <h3>AI as a reliability multiplier</h3>
+        <p>The goal isn't to replace field judgment — it's to remove the friction around it. AI handles
+           the lookup, the pattern-matching, and the paperwork, so more time goes to the parts of
+           reliability engineering that actually need a human.</p>
+        <ul class="showcase-tags">
+          <li>Human-in-the-loop</li>
+          <li>Field-first design</li>
+          <li>Practical, not theoretical</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section section-alt">
+  <div class="section-inner">
+    <p class="section-eyebrow">FIELD ARCHIVE</p>
+    <h2 class="section-title">Systems &amp; equipment</h2>
+    <p class="section-sub">Two areas I work in most. Pick one to see its process stages.</p>
+
+    <div class="gallery-tabs">
+      <button class="tab-btn active" data-tab="nonwoven">Nonwoven Plant</button>
+      <button class="tab-btn" data-tab="line4">Line 4</button>
+    </div>
+
+    <!-- NONWOVEN PLANT PANEL -->
+    <div class="gallery-panel active" data-panel="nonwoven">
+      <p class="gallery-panel-desc">
+        A typical nonwoven line turns raw fiber into finished roll goods across a few key stages:
+        opening and blending the fiber, forming the web, bonding it, and winding the finished
+        material. These are the systems most central to keeping that process running.
+      </p>
+      <div class="gallery-grid">
+
+        <div class="gallery-card">
+          <div class="gallery-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20,20 A14,14 0 1 1 18,34"/>
+              <polyline points="14,28 18,34 24,32"/>
+              <path d="M44,44 A14,14 0 1 1 46,30"/>
+              <polyline points="50,36 46,30 40,32"/>
+            </svg>
+          </div>
+          <h3>Fiber opening &amp; blending</h3>
+          <p>Raw fiber is opened and blended before it ever reaches the line.</p>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8,24 Q16,16 24,24 T40,24 T56,24"/>
+              <path d="M8,34 Q16,26 24,34 T40,34 T56,34"/>
+              <path d="M8,44 Q16,36 24,44 T40,44 T56,44"/>
+            </svg>
+          </div>
+          <h3>Web forming</h3>
+          <p>Carding or airlaid systems lay the fiber into a uniform web.</p>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="22" cy="32" r="10"/>
+              <circle cx="42" cy="32" r="10"/>
+              <line x1="14" y1="16" x2="18" y2="20"/>
+              <line x1="20" y1="12" x2="23" y2="17"/>
+              <line x1="27" y1="10" x2="29" y2="16"/>
+            </svg>
+          </div>
+          <h3>Thermal bonding</h3>
+          <p>Calenders or ovens bond the web into a stable material.</p>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="32" r="16"/>
+              <circle cx="32" cy="32" r="10"/>
+              <circle cx="32" cy="32" r="4"/>
+              <line x1="32" y1="6" x2="32" y2="12"/>
+            </svg>
+          </div>
+          <h3>Winding &amp; packaging</h3>
+          <p>Finished material is wound into rolls and prepared for shipping.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LINE 4 PANEL -->
+    <div class="gallery-panel" data-panel="line4">
+      <p class="gallery-panel-desc">
+        Line 4 is the production line I've spent the most time on — from web forming through
+        drying, calendering, collection, and packaging. Here's a look at its major process stages.
+      </p>
+      <div class="gallery-grid">
+
+        <div class="gallery-card">
+          <div class="gallery-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8,24 Q16,16 24,24 T40,24 T56,24"/>
+              <path d="M8,34 Q16,26 24,34 T40,34 T56,34"/>
+              <path d="M8,44 Q16,36 24,44 T40,44 T56,44"/>
+            </svg>
+          </div>
+          <h3>Carding / airlaid forming</h3>
+          <p>Where the fiber web for Line 4 takes shape.</p>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="22" cy="32" r="10"/>
+              <circle cx="42" cy="32" r="10"/>
+              <line x1="14" y1="16" x2="18" y2="20"/>
+              <line x1="20" y1="12" x2="23" y2="17"/>
+              <line x1="27" y1="10" x2="29" y2="16"/>
+            </svg>
+          </div>
+          <h3>Dryer &amp; calender</h3>
+          <p>Sets the web's final bond and finish before collection.</p>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="8" y="26" width="48" height="12" rx="2"/>
+              <circle cx="16" cy="32" r="3" fill="currentColor" stroke="none"/>
+              <circle cx="32" cy="32" r="3" fill="currentColor" stroke="none"/>
+              <circle cx="48" cy="32" r="3" fill="currentColor" stroke="none"/>
+              <line x1="50" y1="20" x2="56" y2="26"/>
+              <line x1="56" y1="26" x2="50" y2="26"/>
+            </svg>
+          </div>
+          <h3>Collection &amp; transport</h3>
+          <p>Moves finished material from the line to the next process step.</p>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="14" y="20" width="36" height="28" rx="2"/>
+              <line x1="14" y1="30" x2="50" y2="30"/>
+              <line x1="32" y1="20" x2="32" y2="48"/>
+              <path d="M10,48 h44" />
+            </svg>
+          </div>
+          <h3>Packaging &amp; palletizing</h3>
+          <p>Final packaging stage before product leaves the line.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <p class="gallery-note">Placeholder icons — swap in your own equipment photos any time. See the README for how.</p>
+  </div>
+</section>
+
+<!-- QUICK WATCH -->
+<section id="video" class="section">
+  <div class="section-inner" style="max-width: 600px; text-align: center;">
+    <p class="section-eyebrow">QUICK WATCH</p>
+    <h2 class="section-title">What's My Job? Reliability Engineer</h2>
+    <p class="section-sub" style="margin: 0 auto 32px;">
+      A 39-second explainer on what a reliability engineer actually focuses on, day to day.
+    </p>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube.com/embed/E_eNyv5W2bI"
+        title="What's My Job? Reliability Engineer"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="video-credit">
+      Video by <a href="https://www.youtube.com/channel/UCRsdOmCZX4GSZMpqAdFhw3A" target="_blank" rel="noopener">IDCON Reliability and Maintenance</a>
+    </p>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools" class="section">
+  <div class="section-inner">
+    <p class="section-eyebrow">LIVE INSTRUMENTS</p>
+    <h2 class="section-title">Reliability tools</h2>
+    <p class="section-sub">Two working calculators, plus a look at larger systems built on the same ideas.</p>
+
+    <div class="tools-grid">
+
+      <!-- MTBF Calculator -->
+      <div class="hmi-card tool-card">
+        <div class="hmi-card-head">
+          <span class="hmi-card-label">MTBF / MTTR / AVAILABILITY</span>
+          <span class="led led-on" id="mtbf-led"></span>
+        </div>
+
+        <div class="tool-body">
+          <label class="field">
+            <span>Total operating time (hrs)</span>
+            <input type="number" id="mtbf-runtime" value="8760" min="0" step="1">
+          </label>
+          <label class="field">
+            <span>Number of failures</span>
+            <input type="number" id="mtbf-failures" value="12" min="0" step="1">
+          </label>
+          <label class="field">
+            <span>Total downtime (hrs)</span>
+            <input type="number" id="mtbf-downtime" value="36" min="0" step="0.1">
+          </label>
+        </div>
+
+        <div class="tool-output">
+          <div class="output-cell">
+            <span class="output-label">MTBF</span>
+            <span class="output-value" id="out-mtbf">—</span>
+            <span class="output-unit">hrs</span>
+          </div>
+          <div class="output-cell">
+            <span class="output-label">MTTR</span>
+            <span class="output-value" id="out-mttr">—</span>
+            <span class="output-unit">hrs</span>
+          </div>
+          <div class="output-cell">
+            <span class="output-label">Availability</span>
+            <span class="output-value" id="out-availability">—</span>
+            <span class="output-unit">%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weibull Calculator -->
+      <div class="hmi-card tool-card">
+        <div class="hmi-card-head">
+          <span class="hmi-card-label">WEIBULL RELIABILITY R(t)</span>
+          <span class="led led-on" id="weibull-led"></span>
+        </div>
+
+        <div class="tool-body">
+          <label class="field">
+            <span>Shape parameter β</span>
+            <input type="number" id="wb-beta" value="2.2" min="0.1" step="0.1">
+          </label>
+          <label class="field">
+            <span>Scale parameter η (hrs)</span>
+            <input type="number" id="wb-eta" value="4000" min="1" step="10">
+          </label>
+          <label class="field">
+            <span>Time t (hrs)</span>
+            <input type="number" id="wb-t" value="2000" min="0" step="10">
+          </label>
+        </div>
+
+        <div class="tool-output">
+          <div class="output-cell output-cell-wide">
+            <span class="output-label">R(t) — probability of survival</span>
+            <span class="output-value" id="out-rt">—</span>
+            <span class="output-unit">%</span>
+          </div>
+        </div>
+        <div class="wb-bar-track">
+          <div class="wb-bar-fill" id="wb-bar-fill"></div>
+        </div>
+        <p class="tool-note" id="wb-note">—</p>
+      </div>
+
+    </div>
+
+    <!-- Showcase cards -->
+    <div class="showcase-list">
+
+      <article class="showcase-card">
+        <div class="showcase-meta">
+          <span class="log-ticket">SYSTEM</span>
+          <span class="showcase-status">In production</span>
+        </div>
+        <h3>AI-assisted diagnostic assistant</h3>
+        <p>A chat-based troubleshooting tool built for a high-speed nonwovens production line. Technicians
+           describe a symptom; the assistant cross-references equipment manuals, wiring drawings, and
+           historical failure notes to suggest likely causes and next checks — cutting diagnosis time on
+           recurring faults.</p>
+        <ul class="showcase-tags">
+          <li>LLM + knowledge base</li>
+          <li>Multi-cabinet coverage</li>
+          <li>Drawing lookup</li>
+        </ul>
+      </article>
+
+      <article class="showcase-card">
+        <div class="showcase-meta">
+          <span class="log-ticket">LIBRARY</span>
+          <span class="showcase-status">168 entries</span>
+        </div>
+        <h3>FMEA &amp; RPN failure library</h3>
+        <p>A standardized failure-mode taxonomy spanning nine equipment categories, scored on severity,
+           occurrence, and detection to prioritize maintenance attention where it actually reduces risk —
+           not just where it's loudest.</p>
+        <ul class="showcase-tags">
+          <li>Severity / Occurrence / Detection</li>
+          <li>RPN prioritization</li>
+          <li>9 failure categories</li>
+        </ul>
+      </article>
+
+      <article class="showcase-card">
+        <div class="showcase-meta">
+          <span class="log-ticket">ANALYSIS</span>
+          <span class="showcase-status">Correction found</span>
+        </div>
+        <h3>Reliability analytics dashboard</h3>
+        <p>Built a Pareto, Weibull, and KPI dashboard from months of production stop data. Along the way,
+           corrected a reliability formula that had been silently overstating performance — the honest
+           number was roughly half of what was being reported, which reopened the conversation about
+           where maintenance hours actually belonged.</p>
+        <ul class="showcase-tags">
+          <li>Weibull analysis</li>
+          <li>Pareto root-cause</li>
+          <li>KPI dashboard</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section section-alt">
+  <div class="section-inner section-inner-narrow">
+    <p class="section-eyebrow">OPEN CHANNEL</p>
+    <h2 class="section-title">Let's talk reliability</h2>
+    <p class="section-sub">
+      Open to reliability engineering roles, and always glad to compare notes with anyone working the
+      maintenance-to-data side of manufacturing.
+    </p>
+    <div class="contact-row">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="btn btn-primary">LinkedIn</a>
+      <a href="mailto:your-email@example.com" class="btn btn-ghost">Email</a>
+    </div>
+    <p class="contact-hint">— update the LinkedIn and email links above with your own before publishing.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Juan Díaz</span>
+    <span class="footer-status"><span class="led led-on"></span> All systems nominal</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
