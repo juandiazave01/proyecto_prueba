@@ -29,4 +29,4 @@ No server needed — just open `index.html` directly in a browser. If you want l
 python3 -m http.server 8000
 ```
 
-then visit `http://localhost:8000`.
+then visit `http://localhost:8000`. 
