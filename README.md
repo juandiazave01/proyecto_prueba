@@ -2,7 +2,7 @@
 
 Static site — no build step required. Files:
 
-- `index.html` — page structure and content
+- `index.html` — page structure and content 
 - `style.css` — design system (dark HMI-inspired theme)
 - `script.js` — career uptime counter + MTBF/MTTR and Weibull calculators
 - `assets/juan-photo.jpg` — hero photo (keep this filename, or update the `src` in `index.html` if you rename it)
