@@ -13,7 +13,7 @@ Static site — no build step required. Files:
 2. In your GitHub repo: **Settings → Pages**.
 3. Under **Build and deployment → Source**, choose **Deploy from a branch**.
 4. Pick the branch (usually `main`) and the folder (`/root` or `/docs`, matching where you put the files).
-5. Save. GitHub gives you a URL like `https://<your-username>.github.io/<repo-name>/` — it usually goes live within a minute or two.
+5. Save. GitHub gives you a URL like `https://<your-username>.github.io/<repo-name>/` — it usually goes live within a minute or  two.
 
 ## Before publishing, personalize
 
