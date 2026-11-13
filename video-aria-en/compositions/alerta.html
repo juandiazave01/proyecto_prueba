@@ -1,0 +1,38 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #al-ground { position: absolute; inset: 0; background: #b91c1c; }
+    #al-fault { position: absolute; left: 0; right: 0; top: 190px; text-align: center; font: 900 330px "Inter", sans-serif; color: #fff5f5; letter-spacing: -0.03em; line-height: 1; }
+    #al-fault span { display: inline-block; }
+    #al-q { position: absolute; left: 0; right: 0; top: 640px; text-align: center; font: 800 84px "Inter", sans-serif; color: #fff5f5; letter-spacing: -0.02em; }
+    #al-q span { display: inline-block; }
+    .al-phone { position: absolute; left: 378px; top: 73px; width: 444px; height: 933px; background: #05070c; border-radius: 58px; padding: 12px; border: 2px solid #2a3140; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45); }
+    .al-screen { position: relative; width: 416px; height: 905px; border-radius: 46px; overflow: hidden; background: #020617; }
+    .al-screen img { position: absolute; left: 0; top: 0; width: 416px; height: 900px; }
+  </style>
+  <div id="root" data-composition-id="alerta" data-width="1920" data-height="1080">
+    <div id="al-ground"></div>
+    <div id="al-fault" class="clip" data-start="0" data-duration="2.1" data-track-index="2">
+      <span>F</span><span>A</span><span>U</span><span>L</span><span>T</span>
+    </div>
+    <div id="al-q" class="clip" data-start="0.6" data-duration="1.5" data-track-index="3">
+      <span>Where</span> <span>do</span> <span>I</span> <span>start?</span>
+    </div>
+    <div id="al-phone" class="al-phone">
+      <div class="al-screen"><img src="assets/screens/m01-home.png" alt="ARIA" /></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#al-fault span", { opacity: 0, filter: "blur(10px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.14, stagger: 0.05, ease: "power2.out" }, 0.05);
+      tl.fromTo("#al-q span", { opacity: 0, filter: "blur(6px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.08, ease: "power2.out" }, 0.6);
+      tl.to(["#al-fault", "#al-q"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 1.85);
+      tl.fromTo("#al-ground", { backgroundColor: "#b91c1c" }, { backgroundColor: "#0b1222", duration: 0.45, ease: "power2.inOut" }, 1.85);
+      tl.fromTo("#al-phone", { y: 1000 }, { y: 0, duration: 0.7, ease: "expo.out" }, 1.85);
+      window.__timelines["alerta"] = tl;
+    })();
+  </script>
+</template>

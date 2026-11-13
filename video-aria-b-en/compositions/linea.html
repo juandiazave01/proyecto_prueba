@@ -1,0 +1,209 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0b1a33; }
+    #ln-world { position: absolute; left: 0; top: 0; width: 8400px; height: 1080px; transform-origin: 0 0;
+      background-color: #0b1a33;
+      background-image:
+        linear-gradient(#1d4170 2px, transparent 2px), linear-gradient(90deg, #1d4170 2px, transparent 2px),
+        linear-gradient(#16325a 1px, transparent 1px), linear-gradient(90deg, #16325a 1px, transparent 1px);
+      background-size: 240px 240px, 240px 240px, 48px 48px, 48px 48px; }
+    #ln-svg { position: absolute; left: 0; top: 0; }
+    .ln-name { position: absolute; top: 120px; font: 700 72px "IBM Plex Mono", monospace; letter-spacing: 0.02em; white-space: nowrap; }
+    .ln-cab { position: absolute; top: 210px; font: 500 32px "IBM Plex Mono", monospace; color: #94a3b8; white-space: nowrap; }
+    .ln-sub { position: absolute; top: 800px; font: 700 34px "IBM Plex Mono", monospace; white-space: nowrap; text-align: center; width: 300px; }
+    .ln-title { position: absolute; left: 120px; top: 90px; width: 1100px; font: 800 72px "Inter", sans-serif; color: #f1f5f9; letter-spacing: -0.02em; line-height: 1.08; }
+    .ln-title span, .ln-fact span { display: inline-block; }
+    .ln-fact { position: absolute; left: 120px; top: 880px; width: 1120px; font: 700 46px "Inter", sans-serif; color: #f1f5f9; letter-spacing: -0.01em; line-height: 1.15; }
+    .ln-phone { position: absolute; left: 1300px; top: 73px; width: 444px; height: 933px; background: #05070c; border-radius: 58px; padding: 12px; border: 2px solid #2a3140; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45); }
+    .ln-screen { position: relative; width: 416px; height: 905px; border-radius: 46px; overflow: hidden; background: #020617; }
+    .ln-screen img { position: absolute; left: 0; top: 0; width: 416px; height: 900px; opacity: 0; }
+    #ln-p1 { opacity: 1; }
+  </style>
+  <div id="root" data-composition-id="linea" data-width="1920" data-height="1080">
+    <div id="ln-world" data-layout-ignore>
+      <svg id="ln-svg" width="8400" height="1080" viewBox="0 0 8400 1080" fill="none" stroke-linejoin="round" stroke-linecap="round">
+        <!-- the web / material running through the line -->
+        <path id="ln-web" d="M 420 760 L 1460 720 L 2560 720 L 3060 690 L 3740 690 L 4370 600 L 5180 600 L 5700 640 L 5900 640" stroke="#f8fafc" stroke-width="6" stroke-dasharray="28 18" />
+
+        <!-- MIX MASTERS x3 -->
+        <g stroke="#fb923c" stroke-width="4" fill="rgba(251,146,60,0.14)">
+          <path d="M 450 380 L 590 380 L 570 500 L 470 500 Z" /><rect x="460" y="500" width="120" height="260" />
+          <path d="M 630 380 L 770 380 L 750 500 L 650 500 Z" /><rect x="640" y="500" width="120" height="260" />
+          <path d="M 810 380 L 950 380 L 930 500 L 830 500 Z" /><rect x="820" y="500" width="120" height="260" />
+          <path d="M 470 740 L 570 540 M 650 740 L 750 540 M 830 740 L 930 540" fill="none" stroke-dasharray="6 10" />
+        </g>
+        <g font-family="IBM Plex Mono" font-weight="700" font-size="30" fill="#fdba74" text-anchor="middle" stroke="none">
+          <text x="520" y="800">MM1</text><text x="700" y="800">MM2</text><text x="880" y="800">MM3</text>
+        </g>
+
+        <!-- CARDS: FOR Card, Airlaid, EK150 -->
+        <g stroke-width="4">
+          <g stroke="#22d3ee" fill="rgba(34,211,238,0.14)">
+            <circle cx="1650" cy="560" r="115" /><circle cx="1790" cy="640" r="48" /><circle cx="1510" cy="650" r="32" />
+            <path d="M 1430 690 L 1500 690 M 1820 690 L 1880 712" fill="none" />
+          </g>
+          <g stroke="#4ade80" fill="rgba(74,222,128,0.14)">
+            <circle cx="2000" cy="560" r="115" /><circle cx="2140" cy="640" r="48" /><circle cx="1860" cy="650" r="32" />
+          </g>
+          <g stroke="#f59e0b" fill="rgba(245,158,11,0.14)">
+            <circle cx="2350" cy="560" r="115" /><circle cx="2490" cy="640" r="48" /><circle cx="2210" cy="650" r="32" />
+          </g>
+          <g stroke="#475569" stroke-width="3"><path d="M 1440 760 L 2560 760" /></g>
+        </g>
+
+        <!-- COLLECTION BELT + Rietter -->
+        <g stroke="#a78bfa" stroke-width="4" fill="rgba(167,139,250,0.14)">
+          <rect x="3060" y="690" width="680" height="44" rx="22" />
+          <circle cx="3100" cy="712" r="18" /><circle cx="3700" cy="712" r="18" />
+          <rect x="3160" y="560" width="120" height="110" rx="6" /><rect x="3340" y="560" width="120" height="110" rx="6" /><rect x="3520" y="560" width="120" height="110" rx="6" />
+          <path d="M 3120 760 L 3120 800 M 3400 760 L 3400 800 M 3680 760 L 3680 800" fill="none" />
+        </g>
+        <g font-family="IBM Plex Mono" font-weight="700" font-size="28" fill="#c4b5fd" text-anchor="middle" stroke="none">
+          <text x="3220" y="624">R1</text><text x="3400" y="624">R2</text><text x="3580" y="624">R3</text>
+        </g>
+
+        <!-- DRYER (6 ovens) + CALENDER -->
+        <g stroke="#f87171" stroke-width="4" fill="rgba(248,113,113,0.14)">
+          <rect x="4370" y="420" width="660" height="360" rx="8" />
+          <path d="M 4370 590 L 5030 590 M 4370 610 L 5030 610 M 4590 420 L 4590 590 M 4810 420 L 4810 590 M 4590 610 L 4590 780 M 4810 610 L 4810 780" fill="none" />
+          <circle cx="5130" cy="555" r="44" /><circle cx="5130" cy="645" r="44" />
+        </g>
+        <g id="ln-ovens" font-family="IBM Plex Mono" text-anchor="middle" stroke="none">
+          <g font-size="28" font-weight="600" fill="#fecaca">
+            <text x="4480" y="470">Up Oven 1</text><text x="4700" y="470">Up Oven 2</text><text x="4920" y="470">Up Oven 3</text>
+            <text x="4480" y="660">Low Oven 3</text><text x="4700" y="660">Low Oven 2</text><text x="4920" y="660">Low Oven 1</text>
+          </g>
+          <g font-size="44" font-weight="700" fill="#4ade80">
+            <text x="4480" y="535">100.0°C</text><text x="4700" y="535">99.9°C</text><text x="4920" y="535">99.9°C</text>
+            <text x="4480" y="725">100.0°C</text><text x="4700" y="725">100.0°C</text><text x="4920" y="725">100.1°C</text>
+          </g>
+        </g>
+
+        <!-- SLITTER -->
+        <g stroke="#fbbf24" stroke-width="4" fill="rgba(251,191,36,0.14)">
+          <circle cx="5800" cy="640" r="110" /><circle cx="5800" cy="640" r="20" />
+          <path d="M 5990 600 L 6010 640 L 5970 640 Z M 6040 600 L 6060 640 L 6020 640 Z M 6090 600 L 6110 640 L 6070 640 Z" />
+          <path d="M 5960 650 L 6130 650" fill="none" />
+          <circle cx="6230" cy="600" r="62" /><circle cx="6230" cy="720" r="52" />
+          <path d="M 5680 780 L 6320 780" fill="none" />
+        </g>
+
+        <!-- PACKAGING: wrapper + roll + robot -->
+        <g stroke="#e879f9" stroke-width="4" fill="rgba(232,121,249,0.14)">
+          <rect x="7180" y="470" width="190" height="270" rx="14" />
+          <ellipse cx="7275" cy="470" rx="95" ry="22" />
+          <path d="M 7120 760 L 7430 760 M 7140 740 L 7410 740" fill="none" />
+          <path d="M 7470 360 L 7470 760 M 7450 760 L 7500 760" fill="none" />
+          <rect x="7440" y="540" width="60" height="70" />
+          <path d="M 7440 575 L 7370 520 M 7440 575 L 7370 690" fill="none" stroke-dasharray="8 8" />
+          <path d="M 6960 760 L 6960 680 L 7040 560 L 7120 600" fill="none" stroke-width="10" />
+          <circle cx="6960" cy="680" r="14" /><circle cx="7040" cy="560" r="14" />
+        </g>
+      </svg>
+
+      <div class="ln-name" style="left:280px;color:#fb923c">MIX MASTERS</div>
+      <div class="ln-cab" style="left:284px">MM1/2/3 — Cab 20</div>
+      <div class="ln-name" style="left:1430px;color:#f1f5f9">CARDS</div>
+      <div class="ln-cab" style="left:1434px">Card 1 · Card 2 · Card 3</div>
+      <div class="ln-sub" style="left:1500px;color:#22d3ee">FOR CARD</div>
+      <div class="ln-sub" style="left:1850px;color:#4ade80">AIRLAID</div>
+      <div class="ln-sub" style="left:2200px;color:#f59e0b">EK150</div>
+      <div class="ln-name" style="left:3060px;color:#a78bfa">COLLECT BELT</div>
+      <div class="ln-cab" style="left:3064px">Rietter — Cab 5560</div>
+      <div class="ln-name" style="left:4370px;color:#f87171">DRYER/CAL</div>
+      <div class="ln-cab" style="left:4374px">Cavitec — Cab 7080</div>
+      <div class="ln-name" style="left:5690px;color:#fbbf24">SLITTER</div>
+      <div class="ln-cab" style="left:5694px">Corecutter — Edelmann</div>
+      <div class="ln-name" style="left:6930px;color:#e879f9">PACKAGING</div>
+      <div class="ln-cab" style="left:6934px">Safety PLC — 1515F-2 PN</div>
+    </div>
+
+    <div id="ln-t0" class="ln-title clip" data-start="0" data-duration="3.0" data-track-index="2">
+      <span>Line</span> <span>4,</span> <span>end</span> <span>to</span> <span>end</span>
+    </div>
+    <div id="ln-f1" class="ln-fact clip" data-start="4.4" data-duration="4.0" data-track-index="3">
+      <span>One</span> <span>E-stop</span> <span>relay</span> <span>per</span> <span>Mix</span> <span>Master:</span><br /><span>21ESD</span> <span>·</span> <span>22ESD</span> <span>·</span> <span>23ESD</span>
+    </div>
+    <div id="ln-f2" class="ln-fact clip" data-start="9.8" data-duration="4.0" data-track-index="3">
+      <span>Every</span> <span>card</span> <span>motor,</span> <span>with</span> <span>its</span> <span>tag,</span> <span>kW,</span> <span>RPM</span> <span>and</span> <span>drive</span>
+    </div>
+    <div id="ln-f3" data-hold class="ln-fact clip" data-start="15.2" data-duration="4.0" data-track-index="3">
+      <span>The</span> <span>pull-rope</span> <span>E-stops</span> <span>along</span> <span>the</span> <span>belt</span>
+    </div>
+    <div id="ln-f4" class="ln-fact clip" data-start="20.6" data-duration="4.0" data-track-index="3">
+      <span>All</span> <span>6</span> <span>ovens,</span> <span>with</span> <span>setpoint,</span> <span>temperature</span> <span>and</span> <span>humidity</span>
+    </div>
+    <div id="ln-f5" data-hold class="ln-fact clip" data-start="26.0" data-duration="4.0" data-track-index="3">
+      <span>394</span> <span>PLC</span> <span>tags,</span> <span>searchable</span>
+    </div>
+    <div id="ln-f6" class="ln-fact clip" data-start="31.4" data-duration="4.0" data-track-index="3">
+      <span>34</span> <span>wrapper</span> <span>steps,</span> <span>each</span> <span>with</span> <span>what</span> <span>to</span> <span>check</span> <span>if</span> <span>it</span> <span>sticks</span>
+    </div>
+    <div id="ln-t9" class="ln-title clip" data-start="36.8" data-duration="2.7" data-track-index="2">
+      <span>All</span> <span>of</span> <span>Line</span> <span>4,</span> <span>in</span> <span>your</span> <span>pocket</span>
+    </div>
+
+    <div class="ln-phone" id="ln-phone">
+      <div class="ln-screen">
+        <img id="ln-p1" src="assets/screens/b1-mixmasters-safety.png" alt="Mix Masters Safety" />
+        <img id="ln-p2" src="assets/screens/b2-cards-drawings.png" alt="Cardas Drawings" />
+        <img id="ln-p3" src="assets/screens/b3-collect-safety.png" alt="Collect Belt Safety" />
+        <img id="ln-p4" src="assets/screens/b4-dryer-burners.png" alt="Dryer Burners" />
+        <img id="ln-p5" src="assets/screens/b5-slitter-tags.png" alt="Slitter Tags" />
+        <img id="ln-p6" src="assets/screens/b6-packaging-wrapseq.png" alt="Packaging Wrap Seq" />
+        <img id="ln-p7" src="assets/screens/b7-criticality.png" alt="Criticality" />
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const FOCUS = 600;
+      const stops = [700, 2000, 3400, 4700, 6000, 7300];
+      const arrive = [4.2, 9.6, 15.0, 20.4, 25.8, 31.2];
+      const S0 = 0.2286, Y0 = 540 - 475 * S0;
+
+      // the web flows at constant speed for the whole take
+      tl.fromTo("#ln-web", { strokeDashoffset: 0 }, { strokeDashoffset: -46 * 60, duration: 39.5, ease: "none" }, 0);
+
+      // establishing: the whole line
+      tl.fromTo("#ln-world", { scale: S0, x: 0, y: Y0 }, { scale: S0, x: 0, y: Y0, duration: 0.01 }, 0);
+      tl.fromTo("#ln-t0 span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.07, ease: "power2.out" }, 0.1);
+      tl.to("#ln-t0 span", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 2.75);
+      tl.fromTo("#ln-phone", { y: 1000 }, { y: 0, duration: 0.7, ease: "expo.out" }, 2.4);
+
+      // dive, then travel stop to stop
+      tl.to("#ln-world", { scale: 1, x: FOCUS - stops[0], y: 0, duration: 1.2, ease: "power2.inOut" }, 3.0);
+      for (let i = 1; i < stops.length; i++) {
+        tl.to("#ln-world", { x: FOCUS - stops[i], duration: 1.1, ease: "power2.inOut" }, arrive[i] - 1.1);
+      }
+      // oven values fill as the camera arrives at the dryer
+      tl.fromTo("#ln-ovens", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 20.5);
+
+      // phone screens: blur swap on arrival
+      const swap = (from, to, t) => {
+        tl.to(from, { opacity: 0, filter: "blur(8px)", duration: 0.15, ease: "power3.in" }, t);
+        tl.fromTo(to, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.15, ease: "power2.out" }, t + 0.1);
+      };
+      swap("#ln-p1", "#ln-p2", 9.5);
+      swap("#ln-p2", "#ln-p3", 14.9);
+      swap("#ln-p3", "#ln-p4", 20.3);
+      swap("#ln-p4", "#ln-p5", 25.7);
+      swap("#ln-p5", "#ln-p6", 31.1);
+      swap("#ln-p6", "#ln-p7", 35.6);
+
+      // facts
+      ["#ln-f1", "#ln-f2", "#ln-f3", "#ln-f4", "#ln-f5", "#ln-f6"].forEach((f, i) => {
+        const t = [4.4, 9.8, 15.2, 20.6, 26.0, 31.4][i];
+        tl.fromTo(f + " span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.06, ease: "power2.out" }, t);
+        tl.to(f + " span", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, t + 3.75);
+      });
+
+      // pull back to the whole line
+      const S1 = 0.149;
+      tl.to("#ln-world", { scale: S1, x: 20, y: 540 - 475 * S1 + 60, duration: 1.4, ease: "power2.inOut" }, 35.5);
+      tl.fromTo("#ln-t9 span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.07, ease: "power2.out" }, 36.9);
+      window.__timelines["linea"] = tl;
+    })();
+  </script>
+</template>

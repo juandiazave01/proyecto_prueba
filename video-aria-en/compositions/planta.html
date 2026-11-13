@@ -1,0 +1,105 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #8f969e; }
+    #pl-cam { position: absolute; inset: 0; }
+    .pl-plate { position: absolute; inset: 0; background: linear-gradient(180deg, #b3b9c0 0%, #9aa1a9 55%, #868d96 100%); }
+    .pl-duct { position: absolute; background: repeating-linear-gradient(90deg, #6b7280 0 26px, #5b616b 26px 34px); border: 3px solid #4b5059; }
+    .pl-duct.v { background: repeating-linear-gradient(180deg, #6b7280 0 26px, #5b616b 26px 34px); }
+    .pl-rail { position: absolute; left: 150px; right: 150px; top: 486px; height: 36px; background: linear-gradient(180deg, #e3e6ea, #aab0b7 60%, #d0d4d9); border-top: 2px solid #f4f5f7; border-bottom: 2px solid #7a8089; }
+    .pl-term { position: absolute; top: 400px; width: 22px; height: 210px; background: linear-gradient(90deg, #8a9099, #a7adb4 40%, #7d838c); border: 2px solid #5f656e; border-radius: 3px; }
+    .pl-term::before, .pl-term::after { content: ""; position: absolute; left: 4px; width: 10px; height: 10px; border-radius: 50%; background: #3b4048; }
+    .pl-term::before { top: 18px; } .pl-term::after { bottom: 18px; }
+    .pl-wire { position: absolute; width: 6px; border-radius: 3px; }
+    #pl-pilz { position: absolute; left: 900px; top: 300px; width: 170px; height: 400px; background: linear-gradient(90deg, #d9ab00, #f2c200 25%, #ffd21f 60%, #d9ab00); border-radius: 8px; border: 3px solid #a37f00; box-shadow: 10px 14px 0 rgba(30,34,40,0.35); }
+    #pl-pilz .face { position: absolute; left: 14px; right: 14px; top: 46px; height: 250px; background: #1f2937; border-radius: 5px; }
+    #pl-pilz .screw { position: absolute; width: 16px; height: 16px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #e5e7eb, #6b7280 70%); }
+    #pl-pilz .brand { position: absolute; left: 0; right: 0; bottom: 64px; text-align: center; font: 700 26px "Inter", sans-serif; color: #1f2937; letter-spacing: 0.04em; }
+    #pl-pilz .model { position: absolute; left: 0; right: 0; bottom: 38px; text-align: center; font: 600 15px "IBM Plex Mono", monospace; color: #3a3000; }
+    .pl-led { position: absolute; right: 22px; width: 26px; height: 26px; border-radius: 50%; background: #2b3542; border: 2px solid #111827; }
+    .pl-led.on-g { background: radial-gradient(circle at 40% 35%, #bbf7d0, #22c55e 55%, #15803d); }
+    .pl-ledlab { position: absolute; right: 58px; font: 600 13px "IBM Plex Mono", monospace; color: #cbd5e1; letter-spacing: 0.06em; }
+    #pl-fault { background: radial-gradient(circle at 40% 35%, #fecaca, #ef4444 55%, #991b1b); }
+    #pl-phx { position: absolute; left: 1090px; top: 330px; width: 120px; height: 360px; background: linear-gradient(90deg, #256b2a, #2f7d32 30%, #3a8f3e 60%, #256b2a); border-radius: 6px; border: 3px solid #1b4d1e; box-shadow: 10px 14px 0 rgba(30,34,40,0.35); }
+    #pl-phx .strip { position: absolute; left: 0; right: 0; top: 120px; height: 90px; background: #e8c400; }
+    #pl-phx .lab { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font: 700 14px "IBM Plex Mono", monospace; color: #1f2937; }
+    .pl-tag { position: absolute; left: 935px; top: 716px; width: 100px; padding: 4px 0; background: #f8fafc; border: 2px solid #475569; font: 700 18px "IBM Plex Mono", monospace; color: #0f172a; text-align: center; }
+    .pl-night { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 70% at 52% 48%, rgba(11,18,34,0) 0%, rgba(11,18,34,0.55) 70%, rgba(11,18,34,0.85) 100%); }
+    #pl-left { position: absolute; left: 0; top: 0; bottom: 0; width: 900px; background: linear-gradient(90deg, rgba(11,18,34,0.92) 0%, rgba(11,18,34,0.75) 60%, rgba(11,18,34,0) 100%); }
+    #pl-time { position: absolute; left: 120px; top: 300px; font: 900 132px "Inter", sans-serif; color: #f1f5f9; letter-spacing: -0.02em; }
+    #pl-place { position: absolute; left: 126px; top: 456px; font: 600 40px "IBM Plex Mono", monospace; color: #22d3ee; letter-spacing: 0.02em; }
+    #pl-line { position: absolute; left: 120px; top: 600px; width: 760px; font: 800 72px "Inter", sans-serif; color: #f1f5f9; line-height: 1.05; letter-spacing: -0.02em; }
+    #pl-line span { display: inline-block; }
+    #pl-line .red { color: #f87171; }
+    #pl-flood { position: absolute; inset: 0; background: #b91c1c; clip-path: circle(0px at 1016px 520px); }
+  </style>
+  <div id="root" data-composition-id="planta" data-width="1920" data-height="1080">
+    <div id="pl-cam" data-layout-ignore>
+      <div class="pl-plate"></div>
+      <div class="pl-duct" style="left:60px;right:60px;top:110px;height:90px"></div>
+      <div class="pl-duct" style="left:60px;right:60px;top:850px;height:90px"></div>
+      <div class="pl-duct v" style="left:60px;top:200px;width:80px;height:650px"></div>
+      <div class="pl-duct v" style="right:60px;top:200px;width:80px;height:650px"></div>
+      <div class="pl-rail"></div>
+      <div id="pl-terms"></div>
+      <div class="pl-wire" style="left:960px;top:200px;height:100px;background:#1d4ed8"></div>
+      <div class="pl-wire" style="left:990px;top:200px;height:100px;background:#b91c1c"></div>
+      <div class="pl-wire" style="left:1020px;top:200px;height:100px;background:#1d4ed8"></div>
+      <div class="pl-wire" style="left:1130px;top:200px;height:130px;background:#1d4ed8"></div>
+      <div class="pl-wire" style="left:1170px;top:200px;height:130px;background:#e5e7eb"></div>
+      <div class="pl-wire" style="left:970px;top:700px;height:150px;background:#1d4ed8"></div>
+      <div class="pl-wire" style="left:1010px;top:700px;height:150px;background:#b91c1c"></div>
+      <div class="pl-wire" style="left:1150px;top:690px;height:160px;background:#1d4ed8"></div>
+      <div id="pl-pilz">
+        <div class="screw" style="left:22px;top:14px"></div><div class="screw" style="left:62px;top:14px"></div><div class="screw" style="left:102px;top:14px"></div>
+        <div class="screw" style="left:22px;bottom:12px"></div><div class="screw" style="left:62px;bottom:12px"></div><div class="screw" style="left:102px;bottom:12px"></div>
+        <div class="face">
+          <div class="pl-ledlab" style="top:42px">POWER</div><div class="pl-led on-g" style="top:36px"></div>
+          <div class="pl-ledlab" style="top:102px">OUTPUT</div><div class="pl-led on-g" style="top:96px"></div>
+          <div class="pl-ledlab" style="top:162px">FAULT</div><div class="pl-led" id="pl-fault" style="top:156px"></div>
+        </div>
+        <div class="brand">PILZ</div>
+        <div class="model">PSWZ X1P</div>
+      </div>
+      <div id="pl-phx"><div class="strip"></div><div class="lab">PSR-EA4</div></div>
+      <div class="pl-tag">30-PSR1</div>
+      <div class="pl-night"></div>
+    </div>
+    <div id="pl-left"></div>
+    <div id="pl-time" class="clip" data-start="0" data-duration="5.2" data-track-index="2">02:47</div>
+    <div id="pl-place" class="clip" data-start="0.6" data-duration="4.6" data-track-index="3">Cabinet 30 · FOR Card</div>
+    <div id="pl-line" class="clip" data-start="1.9" data-duration="3.3" data-track-index="4">
+      <span>Line</span> <span>4</span> <span>goes</span> <span class="red">down.</span>
+    </div>
+    <div id="pl-flood"></div>
+  </div>
+  <script>
+    (function () {
+      const terms = document.getElementById("pl-terms");
+      let html = "";
+      for (let i = 0; i < 22; i++) html += '<div class="pl-term" style="left:' + (220 + i * 30) + 'px"></div>';
+      for (let i = 0; i < 18; i++) html += '<div class="pl-term" style="left:' + (1250 + i * 30) + 'px"></div>';
+      terms.innerHTML = html;
+
+      const tl = gsap.timeline({ paused: true });
+      // LED blink: on 0.5 s, off 0.3 s (finite sets)
+      for (let t = 0, i = 0; t < 5.2; t += 0.8, i++) {
+        tl.set("#pl-fault", { opacity: 1 }, t);
+        tl.set("#pl-fault", { opacity: 0.18 }, t + 0.5);
+      }
+      // camera push to the FAULT LED (centre 1057,489)
+      tl.fromTo("#pl-cam", { scale: 1, transformOrigin: "1016px 520px" },
+        { scale: 2.7, duration: 3.6, ease: "power2.inOut" }, 0.4);
+      tl.fromTo("#pl-left", { opacity: 1 }, { opacity: 1, duration: 0.01 }, 0);
+      // titles
+            tl.fromTo("#pl-place", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, 0.6);
+      tl.fromTo("#pl-line span", { opacity: 0, filter: "blur(6px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.07, ease: "power2.out" }, 1.9);
+      tl.to(["#pl-time", "#pl-place", "#pl-line", "#pl-left"], { opacity: 0, filter: "blur(6px)", duration: 0.25, ease: "power3.in" }, 4.0);
+      // the LED becomes the world
+      tl.set("#pl-fault", { opacity: 1 }, 4.2);
+      tl.fromTo("#pl-flood", { clipPath: "circle(0px at 1016px 520px)" },
+        { clipPath: "circle(2300px at 1016px 520px)", duration: 0.75, ease: "power3.in" }, 4.4);
+      window.__timelines["planta"] = tl;
+    })();
+  </script>
+</template>

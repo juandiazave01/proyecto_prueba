@@ -1,0 +1,79 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0b1222; }
+    .me-phone { position: absolute; left: 378px; top: 73px; width: 444px; height: 933px; background: #05070c; border-radius: 58px; padding: 12px; border: 2px solid #2a3140; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45); }
+    .me-screen { position: relative; width: 416px; height: 905px; border-radius: 46px; overflow: hidden; background: #020617; }
+    .me-screen img { position: absolute; left: 0; top: 0; width: 416px; height: 900px; }
+    #me-s2 { opacity: 0; }
+    #me-finger { position: absolute; left: -32px; top: -32px; width: 64px; height: 64px; border-radius: 50%; background: rgba(248, 250, 252, 0.88); border: 3px solid rgba(15, 23, 42, 0.55); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35); }
+    #me-title { position: absolute; left: 1000px; top: 96px; width: 860px; font: 800 58px "Inter", sans-serif; color: #f1f5f9; letter-spacing: -0.02em; line-height: 1.1; }
+    #me-title span { display: inline-block; }
+    #me-title .acc { color: #22d3ee; }
+    #me-nums { position: absolute; left: 1000px; top: 330px; width: 860px; }
+    .me-n { display: flex; align-items: baseline; gap: 28px; height: 150px; }
+    .me-n b { font: 900 112px "Inter", sans-serif; color: #f1f5f9; letter-spacing: -0.03em; min-width: 300px; text-align: right; }
+    .me-n i { font: 600 40px "Inter", sans-serif; font-style: normal; color: #94a3b8; }
+    #me-pareto { position: absolute; left: 1000px; top: 330px; width: 860px; }
+    #me-pareto .cap { font: 600 30px "IBM Plex Mono", monospace; color: #94a3b8; margin-bottom: 18px; }
+    .me-bar { display: flex; align-items: center; height: 66px; }
+    .me-bar .nm { width: 330px; font: 600 32px "Inter", sans-serif; color: #e2e8f0; }
+    .me-bar .tr { position: relative; width: 420px; height: 38px; }
+    .me-bar .fill { position: absolute; left: 0; top: 0; bottom: 0; background: #38bdf8; border-radius: 3px; transform-origin: 0 50%; }
+    .me-bar .val { margin-left: 18px; font: 700 32px "IBM Plex Mono", monospace; color: #f1f5f9; }
+    #me-mtbf { position: absolute; left: 1000px; top: 840px; width: 860px; font: 600 32px "IBM Plex Mono", monospace; color: #fbbf24; }
+  </style>
+  <div id="root" data-composition-id="memoria" data-width="1920" data-height="1080">
+    <div class="me-phone" id="me-phone">
+      <div class="me-screen">
+        <img id="me-s1" src="assets/screens/m06-mechlog.png" alt="ARIA Mech Log" />
+        <img id="me-s2" src="assets/screens/m08-reliability.png" alt="ARIA Reliability" />
+      </div>
+    </div>
+    <div id="me-title" class="clip" data-start="0.2" data-duration="7.6" data-track-index="2">
+      <span>What</span> <span>one</span> <span>shift</span> <span>learns,</span>
+      <span>the</span> <span class="acc">whole</span> <span class="acc">line</span> <span class="acc">knows</span>
+    </div>
+    <div id="me-nums" class="clip" data-start="0.9" data-duration="2.7" data-track-index="3">
+      <div class="me-n" id="me-n1"><b>667</b><i>shift notes</i></div>
+      <div class="me-n" id="me-n2"><b>202</b><i>days observed</i></div>
+      <div class="me-n" id="me-n3"><b>144</b><i>equipment groups</i></div>
+    </div>
+    <div id="me-pareto" class="clip" data-start="3.9" data-duration="3.9" data-track-index="3">
+      <div class="cap">Logged downtime hours · Pareto</div>
+      <div class="me-bar"><div class="nm">EK150</div><div class="tr"><div class="fill" style="width:420px"></div></div><div class="val">71 h</div></div>
+      <div class="me-bar"><div class="nm">FOR Card</div><div class="tr"><div class="fill" style="width:278px"></div></div><div class="val">47 h</div></div>
+      <div class="me-bar"><div class="nm">Willow Card</div><div class="tr"><div class="fill" style="width:207px"></div></div><div class="val">35 h</div></div>
+      <div class="me-bar"><div class="nm">Dryer</div><div class="tr"><div class="fill" style="width:172px"></div></div><div class="val">29 h</div></div>
+      <div class="me-bar"><div class="nm">Perfojet Injector</div><div class="tr"><div class="fill" style="width:136px"></div></div><div class="val">23 h</div></div>
+      <div class="me-bar"><div class="nm">Blending Mixers</div><div class="tr"><div class="fill" style="width:118px"></div></div><div class="val">20 h</div></div>
+    </div>
+    <div id="me-mtbf" class="clip" data-start="5.4" data-duration="2.4" data-track-index="4">Worst MTBF: EK150 — 89.8 h between failures</div>
+    <div id="me-finger" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.set("#me-s1", { opacity: 1 }, 0);
+      tl.set("#me-s2", { opacity: 0 }, 0);
+      tl.set("#me-finger", { x: 1500, y: 1180, scale: 1 }, 0);
+      // dip in from the plant
+      tl.fromTo("#me-phone", { y: 1000 }, { y: 0, duration: 0.6, ease: "expo.out" }, 0);
+      tl.fromTo("#me-title span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.07, ease: "power2.out" }, 0.2);
+      tl.fromTo(".me-n", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, stagger: 0.45, ease: "power2.out" }, 0.9);
+      tl.to(".me-n", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 3.35);
+      // tap RELIABILITY (tab centre 139,149 css)
+      tl.to("#me-finger", { x: 540, y: 246, duration: 0.5, ease: "power2.inOut" }, 3.1);
+      tl.to("#me-finger", { scale: 0.82, duration: 0.1, ease: "power2.in" }, 3.62);
+      tl.set("#me-s1", { opacity: 0 }, 3.7);
+      tl.set("#me-s2", { opacity: 1 }, 3.7);
+      tl.to("#me-finger", { scale: 1, duration: 0.14, ease: "power2.out" }, 3.72);
+      tl.to("#me-finger", { x: 1500, y: 1180, duration: 0.45, ease: "power3.in" }, 3.95);
+      // Pareto rebuilt from Reliability
+      tl.fromTo("#me-pareto .cap", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, 3.9);
+      tl.fromTo("#me-pareto .me-bar", { opacity: 0 }, { opacity: 1, duration: 0.15, stagger: 0.12, ease: "power2.out" }, 4.0);
+      tl.fromTo("#me-pareto .fill", { scaleX: 0 }, { scaleX: 1, duration: 0.6, stagger: 0.12, ease: "expo.out" }, 4.05);
+      tl.fromTo("#me-mtbf", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, 5.4);
+      window.__timelines["memoria"] = tl;
+    })();
+  </script>
+</template>
