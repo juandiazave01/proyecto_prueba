@@ -56,6 +56,9 @@
 
 <script>
   const FILMS = [
+    { tag: "D", len: "1:32", lenEn: "1:41",
+      es: { title: "Turno a turno", src: "videos/d-es.mp4", text: "Tour por Shifts, Mech Log, Reliability, Criticality y Performance: cada parada reportada igual, para saber dónde enfocarse y reducir el paro no programado." },
+      en: { title: "Shift by shift", src: "videos/d-en.mp4", text: "A tour of Shifts, Mech Log, Reliability, Criticality and Performance: every stop reported the same way, so the team knows where to focus to cut unplanned downtime." } },
     { tag: "A", len: "0:38",
       es: { title: "Turno de noche", src: "videos/a-es.mp4", text: "02:47, el relé Pilz del Gabinete 30 marca FAULT. ARIA lleva al técnico del síntoma a la guía de fallas y al plano." },
       en: { title: "Night Shift", src: "videos/a-en.mp4", text: "02:47, the Pilz relay in Cabinet 30 shows FAULT. ARIA takes the technician from the symptom to the fault guide and the drawing." } },
@@ -67,8 +70,8 @@
       en: { title: "Know-how no longer goes home", src: "videos/c-en.mp4", text: "Email, drawings, loose sheets and sticky notes end up organised inside ARIA." } },
   ];
   const UI = {
-    es: { sub: "Line 4 — Spuntech · 3 videos", foot: "Música generada con MusicGen; voz en off generada con Kokoro. Las pantallas y los datos son de ARIA v6; las escenas de planta están dramatizadas." },
-    en: { sub: "Line 4 — Spuntech · 3 videos", foot: "Music generated with MusicGen; voice-over generated with Kokoro. Screens and figures come from ARIA v6; the plant scenes are dramatised." },
+    es: { sub: "Line 4 — Spuntech · 4 videos", foot: "Música generada con MusicGen; voz en off generada con Kokoro. Las pantallas y los datos son de ARIA v6; las escenas de planta están dramatizadas." },
+    en: { sub: "Line 4 — Spuntech · 4 videos", foot: "Music generated with MusicGen; voice-over generated with Kokoro. Screens and figures come from ARIA v6; the plant scenes are dramatised." },
   };
   const films = document.getElementById("films");
   function render(lang) {
@@ -78,7 +81,7 @@
       const el = document.createElement("article");
       el.className = "film";
       el.innerHTML = `<video controls playsinline preload="metadata" src="${t.src}"></video>
-        <div class="meta"><span class="tag">${f.tag}</span><h2>${t.title}</h2><span class="len">${f.len}</span></div>
+        <div class="meta"><span class="tag">${f.tag}</span><h2>${t.title}</h2><span class="len">${lang === "en" && f.lenEn ? f.lenEn : f.len}</span></div>
         <p>${t.text}</p>`;
       films.appendChild(el);
     });
