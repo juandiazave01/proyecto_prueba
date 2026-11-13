@@ -1,0 +1,72 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #4a3426; }
+    .bench { position: absolute; inset: 0; background-color: #4a3426; background-image: repeating-linear-gradient(180deg, rgba(63,44,32,0.9) 0 3px, transparent 3px 22px), radial-gradient(ellipse 80% 70% at 50% 35%, rgba(255,214,170,0.10), rgba(0,0,0,0.35)); }
+    .ob { position: absolute; }
+    .ob-dwg { width: 600px; height: 420px; }
+    .ob-dwg .sh { position: absolute; width: 600px; height: 420px; background: #f8f5ee; border: 1px solid #c9c2b2; box-shadow: 6px 8px 0 rgba(0,0,0,0.28); }
+    .ob-dwg .sh1 { left: 18px; top: 16px; transform: rotate(3deg); } .ob-dwg .sh2 { left: 9px; top: 8px; transform: rotate(1.5deg); } .ob-dwg .sh3 { left: 0; top: 0; }
+    .ob-dwg svg { position: absolute; left: 0; top: 0; }
+    .ob-dwg .tb { position: absolute; right: 16px; bottom: 16px; width: 250px; padding: 8px 12px; border: 2px solid #1f2937; background: #f8f5ee; font: 700 22px "IBM Plex Mono", monospace; color: #1f2937; line-height: 1.25; }
+    .ob-dwg .tb em { display: block; font-style: normal; font-weight: 500; font-size: 17px; color: #475569; }
+    .ob-dwg .tb b { color: #b91c1c; }
+    .ob-mail { width: 480px; height: 300px; background: #ffffff; border-radius: 6px; box-shadow: 6px 8px 0 rgba(0,0,0,0.28); padding: 22px 26px; font-family: "Inter", sans-serif; }
+    .ob-mail .bar { height: 10px; background: #2563eb; margin: -22px -26px 16px; border-radius: 6px 6px 0 0; }
+    .ob-mail .r { font-size: 20px; color: #475569; margin-bottom: 6px; } .ob-mail .r b { color: #0f172a; }
+    .ob-mail .ln { height: 12px; background: #e2e8f0; border-radius: 6px; margin-top: 14px; }
+    .ob-clip { width: 400px; height: 540px; background: #8b5e34; border-radius: 16px; box-shadow: 6px 8px 0 rgba(0,0,0,0.3); }
+    .ob-clip .clp { position: absolute; left: 130px; top: -18px; width: 140px; height: 50px; background: linear-gradient(#d1d5db, #9ca3af); border-radius: 10px; border: 2px solid #6b7280; }
+    .ob-clip .pp { position: absolute; left: 24px; top: 44px; right: 24px; bottom: 24px; background: #f8f5ee; padding: 18px 20px; font-family: "IBM Plex Mono", monospace; color: #1f2937; }
+    .ob-clip .pp h4 { font: 700 22px "IBM Plex Mono", monospace; margin-bottom: 14px; }
+    .ob-clip .row { display: flex; justify-content: space-between; font-size: 19px; padding: 9px 0; border-bottom: 1px solid #d6cfbf; }
+    .ob-note { width: 290px; height: 290px; background: #fde047; box-shadow: 6px 8px 0 rgba(0,0,0,0.28); padding: 26px 24px; font: 700 29px "Inter", sans-serif; color: #3f3a1f; line-height: 1.25; }
+
+    .lab { position: absolute; font: 800 44px "Inter", sans-serif; color: #fff; text-shadow: 0 2px 0 rgba(0,0,0,0.6), 0 0 18px rgba(0,0,0,0.5); white-space: nowrap; }
+    #an-title { position: absolute; left: 120px; top: 56px; font: 900 96px "Inter", sans-serif; color: #fff; letter-spacing: -0.02em; text-shadow: 0 3px 0 rgba(0,0,0,0.5); }
+  </style>
+  <div id="root" data-composition-id="antes" data-width="1920" data-height="1080">
+    <div class="bench"></div>
+    <div id="an-objs" data-layout-ignore data-layout-allow-overlap>
+      <div id="an-dwg" class="ob ob-dwg" style="left:140px;top:240px"><div class="sh sh1"></div><div class="sh sh2"></div><div class="sh sh3"></div>
+        <svg width="600" height="420" viewBox="0 0 600 420" fill="none" stroke="#1e3a8a" stroke-width="2">
+          <rect x="16" y="16" width="568" height="388" /><rect x="60" y="70" width="300" height="150" />
+          <path d="M60 145 H360 M160 70 V220 M260 70 V220" /><circle cx="440" cy="120" r="44" /><circle cx="440" cy="120" r="10" />
+          <path d="M60 280 H330 M60 310 H300 M60 340 H320" stroke="#94a3b8" />
+        </svg>
+        <div class="tb">Cab_7080<em>Cavitec Dryer-Calender</em><b>94 páginas</b></div></div>
+      <div id="an-mail" class="ob ob-mail" style="left:820px;top:180px"><div class="bar"></div>
+        <div class="r">Asunto: <b>Shift notes — Line 4</b></div>
+        <div class="r">Para: <b>Mantenimiento L4</b></div>
+        <div class="ln" style="width:92%"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:88%"></div><div class="ln" style="width:60%"></div></div>
+      <div id="an-clip" class="ob ob-clip" style="left:1490px;top:230px"><div class="clp"></div>
+        <div class="pp"><h4>Fallas — Línea 4</h4>
+          <div class="row"><span>Belt</span><span>29</span></div><div class="row"><span>Bearing</span><span>20</span></div>
+          <div class="row"><span>Gearbox</span><span>18</span></div><div class="row"><span>Perfojet Cyl.</span><span>18</span></div>
+          <div class="row"><span>Motor</span><span>15</span></div><div class="row"><span>Weigh Belt</span><span>8</span></div></div></div>
+      <div id="an-note" class="ob ob-note" style="left:860px;top:600px">Table 4 no alimenta fibra → escalar a Process Eng.</div>
+    </div>
+    <div id="an-title" class="clip" data-start="0" data-duration="1.7" data-track-index="2">¿Dónde estaba ese plano?</div>
+    <div id="an-l1" class="lab clip" style="left:150px;top:700px" data-start="1.1" data-duration="6.4" data-track-index="3">Planos de 94 páginas</div>
+    <div id="an-l2" class="lab clip" style="left:800px;top:500px" data-start="2.1" data-duration="5.4" data-track-index="4">Notas de turno, en el correo</div>
+    <div id="an-l3" class="lab clip" style="left:1330px;top:810px" data-start="3.5" data-duration="4.0" data-track-index="5">Fallas, en hojas sueltas</div>
+    <div id="an-l4" class="lab clip" style="left:860px;top:920px" data-start="4.9" data-duration="2.6" data-track-index="6">Lecciones que se van con el turno</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#an-dwg", { rotation: -3 }, { rotation: -3, duration: 0.01 }, 0);
+      tl.to("#an-title", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 1.45);
+      const drop = (sel, t, rot) => tl.fromTo(sel, { y: -1300, rotation: rot * 4 }, { y: 0, rotation: rot, duration: 0.6, ease: "expo.out" }, t);
+      drop("#an-mail", 1.6, 3); drop("#an-clip", 3.0, -2); drop("#an-note", 4.4, 6);
+      ["#an-l1", "#an-l2", "#an-l3", "#an-l4"].forEach((l, i) => {
+        tl.fromTo(l, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power2.out" }, [1.1, 2.1, 3.5, 4.9][i]);
+      });
+      // the pile churns
+      [["#an-dwg", 8, -1.5], ["#an-mail", -7, 1.2], ["#an-clip", 6, -1], ["#an-note", -8, 1.5]].forEach(([s, dx, dr], i) => {
+        tl.to(s, { x: dx, rotation: "+=" + dr, duration: 0.18, ease: "sine.inOut", yoyo: true, repeat: 3 }, 6.0 + i * 0.07);
+      });
+      tl.to([".lab"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 7.1);
+      window.__timelines["antes"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,46 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #020617; }
+    #lc-card { position: absolute; left: 260px; top: 170px; width: 1400px; background: #0f172a; border: 2px solid #ef4444; border-radius: 14px; padding: 48px 56px; transform-origin: 50% 50%; }
+    #lc-meta { display: flex; align-items: center; gap: 22px; font: 600 30px "IBM Plex Mono", monospace; color: #94a3b8; }
+    #lc-badge { background: #ef4444; color: #fff; padding: 4px 14px; border-radius: 4px; font-weight: 700; }
+    #lc-title { margin-top: 26px; width: 960px; font: 800 58px "Inter", sans-serif; color: #f8fafc; line-height: 1.12; letter-spacing: -0.02em; }
+    #lc-impact { position: absolute; right: 56px; top: 48px; text-align: right; }
+    #lc-impact .k { font: 600 30px "IBM Plex Mono", monospace; color: #94a3b8; }
+    #lc-impact .v { font: 900 120px "Inter", sans-serif; color: #fbbf24; letter-spacing: -0.03em; line-height: 1; margin-top: 6px; }
+    #lc-what { margin-top: 44px; }
+    #lc-what .k { font: 700 30px "IBM Plex Mono", monospace; color: #f87171; letter-spacing: 0.06em; }
+    #lc-what .v { margin-top: 12px; font: 500 36px "Inter", sans-serif; color: #cbd5e1; line-height: 1.35; width: 1260px; }
+    #lc-line { position: absolute; left: 0; right: 0; top: 820px; text-align: center; font: 800 68px "Inter", sans-serif; color: #f1f5f9; letter-spacing: -0.02em; }
+    #lc-line span { display: inline-block; }
+    #lc-line .acc { color: #22d3ee; }
+  </style>
+  <div id="root" data-composition-id="leccion" data-width="1920" data-height="1080">
+    <div id="lc-card" class="clip" data-start="0" data-duration="7.5" data-track-index="2">
+      <div id="lc-meta"><span id="lc-badge">CRITICAL</span><span>2026-09-18 · Controls / PLC</span></div>
+      <div id="lc-title">Inline PLC Replacement — Cards/Fine-Opener Cascade Failure</div>
+      <div id="lc-impact"><div class="k">Total impact</div><div class="v">7.5h</div></div>
+      <div id="lc-what">
+        <div class="k">WHAT HAPPENED</div>
+        <div class="v">Maintenance and Controls replaced the Line 4 Inline PLC on 9/18 (the PLC that controls the cards and fine openers).</div>
+      </div>
+    </div>
+    <div id="lc-line" data-hold class="clip" data-start="3.6" data-duration="3.9" data-track-index="3">
+      <span>El</span> <span>conocimiento</span> <span class="acc">ya</span> <span class="acc">no</span> <span class="acc">se</span> <span class="acc">va</span> <span class="acc">a</span> <span class="acc">casa</span>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // the Lessons screen becomes the world
+      tl.fromTo("#lc-card", { scale: 0.3, opacity: 0, filter: "blur(6px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.7, ease: "expo.out" }, 0);
+      tl.fromTo("#lc-meta", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, 0.5);
+      tl.fromTo("#lc-title", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, 0.8);
+      tl.fromTo("#lc-impact .k", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, 1.4);
+      tl.fromTo("#lc-impact .v", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 1.5);
+      tl.fromTo("#lc-what", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.25, ease: "power2.out" }, 2.0);
+      tl.fromTo("#lc-line span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.07, ease: "power2.out" }, 3.6);
+      window.__timelines["leccion"] = tl;
+    })();
+  </script>
+</template>

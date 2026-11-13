@@ -1,0 +1,28 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #020617; }
+    #cb-band { position: absolute; left: 160px; top: 700px; width: 1600px; height: 14px; display: flex; gap: 8px; }
+    #cb-band i { flex: 1; height: 14px; border-radius: 7px; transform-origin: 0 50%; }
+    #cb-mark { position: absolute; left: 0; right: 0; top: 400px; text-align: center; font: 700 180px "IBM Plex Mono", monospace; color: #22d3ee; letter-spacing: 0.08em; line-height: 1; }
+    #cb-mark span { display: inline-block; }
+    #cb-mark .ring { width: 130px; height: 130px; border: 14px solid #22d3ee; border-radius: 50%; margin-right: 44px; vertical-align: -6px; position: relative; }
+    #cb-mark .ring::after { content: ""; position: absolute; left: 24px; top: 24px; width: 54px; height: 54px; border-radius: 50%; background: #22d3ee; }
+    #cb-sub { position: absolute; left: 0; right: 0; top: 620px; text-align: center; font: 600 40px "IBM Plex Mono", monospace; color: #94a3b8; letter-spacing: 0.12em; }
+    #cb-names { position: absolute; left: 160px; top: 740px; width: 1600px; display: flex; gap: 8px; }
+    #cb-names b { flex: 1; text-align: center; font: 700 28px "IBM Plex Mono", monospace; white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="cierre" data-width="1920" data-height="1080">
+    <div id="cb-mark" class="clip" data-start="0.2" data-duration="3.8" data-track-index="4">
+      <span class="ring"></span><span>A</span><span>R</span><span>I</span><span>A</span>
+    </div>
+    <div id="cb-sub" class="clip" data-start="0.9" data-duration="3.1" data-track-index="5">LINE 4 — SPUNTECH</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+                  tl.fromTo("#cb-mark span", { opacity: 0 }, { opacity: 1, duration: 0.01, stagger: 0.1, ease: "none" }, 0.2);
+      tl.fromTo("#cb-sub", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, 0.9);
+      window.__timelines["cierre"] = tl;
+    })();
+  </script>
+</template>
