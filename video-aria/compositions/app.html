@@ -1,0 +1,142 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0b1222; }
+    .ap-phone { position: absolute; left: 378px; top: 73px; width: 444px; height: 933px; background: #05070c; border-radius: 58px; padding: 12px; border: 2px solid #2a3140; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45); }
+    .ap-screen { position: relative; width: 416px; height: 905px; border-radius: 46px; overflow: hidden; background: #020617; }
+    .ap-screen img { position: absolute; left: 0; top: 0; width: 416px; }
+    #ap-s1, #ap-s2, #ap-s5 { height: 900px; }
+    #ap-s2, #ap-s3, #ap-s5 { opacity: 0; }
+    #ap-s3 { height: 1312px; }
+    #ap-finger { position: absolute; left: -32px; top: -32px; width: 64px; height: 64px; border-radius: 50%; background: rgba(248, 250, 252, 0.88); border: 3px solid rgba(15, 23, 42, 0.55); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35); }
+    .ap-title { position: absolute; left: 1000px; width: 840px; color: #f1f5f9; }
+    #ap-t1 { top: 330px; }
+    #ap-t1 .mark { font: 700 150px "IBM Plex Mono", monospace; color: #22d3ee; letter-spacing: 0.08em; line-height: 1; }
+    #ap-t1 .sub { margin-top: 28px; font: 700 52px "Inter", sans-serif; letter-spacing: -0.01em; line-height: 1.15; }
+    #ap-t1 span, #ap-t2 span, #ap-t3 span, #ap-t4 span { display: inline-block; }
+    #ap-t2 { top: 380px; font: 800 64px "Inter", sans-serif; letter-spacing: -0.02em; line-height: 1.1; }
+    #ap-t2 .red { color: #f87171; }
+    #ap-t2 .meta { margin-top: 26px; font: 600 34px "IBM Plex Mono", monospace; color: #22d3ee; letter-spacing: 0; }
+    #ap-t3, #ap-t4 { top: 120px; font: 800 58px "Inter", sans-serif; letter-spacing: -0.02em; line-height: 1.1; }
+    #ap-guide { position: absolute; left: 980px; top: 270px; width: 860px; background: #fff1f2; border-left: 10px solid #ef4444; border-radius: 10px; padding: 34px 40px 30px; transform-origin: 0 0; }
+    #ap-guide .hd { font: 700 38px "IBM Plex Mono", monospace; color: #b91c1c; }
+    #ap-guide .dev { margin-top: 6px; font: 500 28px "IBM Plex Mono", monospace; color: #64748b; }
+    #ap-guide ol { list-style: none; margin-top: 24px; }
+    #ap-guide li { font: 500 34px "IBM Plex Mono", monospace; color: #0f172a; padding: 12px 0; border-top: 1px solid #fecdd3; }
+    #ap-guide li b { color: #b91c1c; margin-right: 14px; }
+    #ap-row { position: absolute; left: 980px; top: 270px; width: 860px; background: #0f172a; border: 2px solid #1e293b; border-top: 4px solid #f87171; border-radius: 10px; padding: 30px 40px; transform-origin: 0 0; }
+    #ap-row .k { font: 600 28px "IBM Plex Mono", monospace; color: #64748b; letter-spacing: 0.08em; margin-top: 20px; }
+    #ap-row .k:first-child { margin-top: 0; }
+    #ap-row .v { font: 500 32px "IBM Plex Mono", monospace; color: #e2e8f0; margin-top: 6px; line-height: 1.35; }
+    #ap-row .sym { color: #fca5a5; font-weight: 700; font-size: 38px; }
+    #ap-row .ref { color: #38bdf8; font-weight: 700; }
+  </style>
+  <div id="root" data-composition-id="app" data-width="1920" data-height="1080">
+    <div id="ap-world" style="position:absolute;inset:0">
+    <div class="ap-phone" id="ap-phone">
+      <div class="ap-screen">
+        <img id="ap-s1" src="assets/screens/m01-home.png" alt="ARIA inicio" />
+        <img id="ap-s2" src="assets/screens/m02-safety.png" alt="ARIA Safety" />
+        <img id="ap-s3" src="assets/screens/m03-safety-open-full.png" alt="ARIA Pilz abierto" />
+        <img id="ap-s5" src="assets/screens/m05-drawings-pilz.png" alt="ARIA Drawings" />
+      </div>
+    </div>
+
+    <div id="ap-t1" class="ap-title clip" data-start="0" data-duration="2.3" data-track-index="2">
+      <div class="mark">◉ ARIA</div>
+      <div class="sub"><span>Copiloto</span> <span>de</span> <span>mantenimiento</span><br /><span>de</span> <span>la</span> <span>Línea</span> <span>4</span></div>
+    </div>
+    <div id="ap-t2" class="ap-title clip" data-start="2.3" data-duration="2.3" data-track-index="3">
+      <div><span>El</span> <span>mismo</span> <span class="red">FAULT,</span> <span>en</span> <span>ARIA</span></div>
+      <div class="meta">30-PSR1 · Pilz PSWZ X1P</div>
+    </div>
+    <div id="ap-t3" class="ap-title clip" data-start="5.1" data-duration="4.4" data-track-index="4">
+      <span>La</span> <span>guía</span> <span>de</span> <span>fallas,</span> <span>paso</span> <span>a</span> <span>paso</span>
+    </div>
+    <div id="ap-guide" class="clip" data-start="5.0" data-duration="4.5" data-track-index="5">
+      <div class="hd">⚠ FAULT ON</div>
+      <div class="dev">30-PSR1 · Pilz PSWZ X1P</div>
+      <ol>
+        <li id="ap-g1"><b>1)</b>Try RES reset.</li>
+        <li id="ap-g2"><b>2)</b>Check ELAN Key #30.</li>
+        <li id="ap-g3"><b>3)</b>Check Schmersal door switches.</li>
+        <li id="ap-g4"><b>4)</b>Measure S11–S12 continuity.</li>
+        <li id="ap-g5"><b>5)</b>Trace ES30 to Cab 5560.</li>
+      </ol>
+    </div>
+    <div id="ap-t4" class="ap-title clip" data-start="10.5" data-duration="3.9" data-track-index="4">
+      <span>Y</span> <span>el</span> <span>plano</span> <span>que</span> <span>lo</span> <span>respalda</span>
+    </div>
+    <div id="ap-row" class="clip" data-start="10.3" data-duration="4.1" data-track-index="5">
+      <div class="k">SYMPTOM</div>
+      <div class="v sym">E-stop no resetea</div>
+      <div class="k">COMPONENT</div>
+      <div class="v">Safety relay / ELAN key</div>
+      <div class="k">ACTION</div>
+      <div class="v">PSR: verificar Power LED. Pilz PSWZ: FAULT LED → revisar S11/S12 wiring. ELAN key: insertar completamente.</div>
+      <div class="k">DRAWING REF</div>
+      <div class="v ref">→ Ver SAFETY DEVICES</div>
+    </div>
+
+    <div id="ap-finger" data-layout-ignore></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const show = (id, t) => {
+        ["#ap-s1", "#ap-s2", "#ap-s3", "#ap-s5"].forEach((s) => tl.set(s, { opacity: s === id ? 1 : 0 }, t));
+      };
+      show("#ap-s1", 0);
+      tl.set("#ap-s3", { y: 0 }, 0);
+      tl.set("#ap-finger", { x: 1500, y: 1180, scale: 1 }, 0);
+
+      // 1. ARIA named
+      tl.fromTo("#ap-t1 .mark", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, 0.1);
+      tl.fromTo("#ap-t1 .sub span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.07, ease: "power2.out" }, 0.25);
+      tl.to("#ap-t1 > div", { opacity: 0, filter: "blur(8px)", duration: 0.16, ease: "power3.in" }, 2.12);
+
+      // tap SAFETY
+      tl.to("#ap-finger", { x: 757, y: 201, duration: 0.5, ease: "power2.inOut" }, 1.5);
+      tl.to("#ap-finger", { scale: 0.82, duration: 0.1, ease: "power2.in" }, 2.02);
+      show("#ap-s2", 2.1);
+      tl.to("#ap-finger", { scale: 1, duration: 0.14, ease: "power2.out" }, 2.12);
+
+      // 2. the same FAULT
+      tl.fromTo("#ap-t2 > div:first-child span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.07, ease: "power2.out" }, 2.35);
+      tl.fromTo("#ap-t2 .meta", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, 2.8);
+      tl.to("#ap-t2 > div", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 4.35);
+
+      // tap the Pilz card
+      tl.to("#ap-finger", { x: 549, y: 495, duration: 0.45, ease: "power2.inOut" }, 3.3);
+      tl.to("#ap-finger", { scale: 0.82, duration: 0.1, ease: "power2.in" }, 3.78);
+      show("#ap-s3", 3.86);
+      tl.to("#ap-finger", { scale: 1, duration: 0.14, ease: "power2.out" }, 3.88);
+      tl.to("#ap-finger", { x: 1500, y: 1180, duration: 0.45, ease: "power3.in" }, 4.1);
+      // scroll to the fault guide
+      tl.to("#ap-s3", { y: -411, duration: 0.75, ease: "power2.inOut" }, 4.3);
+
+      // 3. the guide carried out of the phone, 2x
+      tl.fromTo("#ap-guide", { x: -540, y: 200, scale: 0.42, opacity: 0, filter: "blur(4px)" },
+        { x: 0, y: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.65, ease: "expo.out" }, 5.0);
+      tl.fromTo("#ap-guide li", { opacity: 0.12 }, { opacity: 1, duration: 0.2, stagger: 0.4, ease: "power2.out" }, 5.7);
+      tl.fromTo("#ap-t3 span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.07, ease: "power2.out" }, 5.15);
+      tl.to(["#ap-guide", "#ap-t3"], { opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in" }, 9.2);
+
+      // back up, tap DRAWINGS
+      tl.to("#ap-s3", { y: 0, duration: 0.55, ease: "power2.inOut" }, 9.2);
+      tl.to("#ap-finger", { x: 652, y: 201, duration: 0.5, ease: "power2.inOut" }, 9.6);
+      tl.to("#ap-finger", { scale: 0.82, duration: 0.1, ease: "power2.in" }, 10.12);
+      show("#ap-s5", 10.2);
+      tl.to("#ap-finger", { scale: 1, duration: 0.14, ease: "power2.out" }, 10.22);
+      tl.to("#ap-finger", { x: 1500, y: 1180, duration: 0.45, ease: "power3.in" }, 10.45);
+
+      // 4. the drawing row carried out
+      tl.fromTo("#ap-row", { x: -590, y: 120, scale: 0.42, opacity: 0, filter: "blur(4px)" },
+        { x: 0, y: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.65, ease: "expo.out" }, 10.3);
+      tl.fromTo("#ap-t4 span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.07, ease: "power2.out" }, 10.55);
+      // whip out to the plant
+      tl.to("#ap-world", { x: -260, filter: "blur(18px)", duration: 0.22, ease: "power3.in" }, 14.18);
+      window.__timelines["app"] = tl;
+    })();
+  </script>
+</template>

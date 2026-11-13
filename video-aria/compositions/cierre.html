@@ -1,0 +1,38 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0b1222; }
+    #ci-claim { position: absolute; left: 0; right: 0; top: 380px; text-align: center; font: 800 84px "Inter", sans-serif; color: #f1f5f9; letter-spacing: -0.02em; line-height: 1.12; }
+    #ci-claim span { display: inline-block; }
+    #ci-claim .acc { color: #22d3ee; }
+    #ci-lock { position: absolute; left: 0; right: 0; top: 400px; height: 260px; }
+    #ci-dot { position: absolute; left: 640px; top: 452px; width: 120px; height: 120px; border-radius: 50%; border: 12px solid #22c55e; }
+    #ci-dot::after { content: ""; position: absolute; left: 22px; top: 22px; width: 52px; height: 52px; border-radius: 50%; background: currentColor; }
+    #ci-word { position: absolute; left: 800px; top: 420px; font: 700 180px "IBM Plex Mono", monospace; color: #22d3ee; letter-spacing: 0.08em; line-height: 1; }
+    #ci-word span { display: inline-block; }
+    #ci-sub { position: absolute; left: 806px; top: 630px; font: 600 40px "IBM Plex Mono", monospace; color: #94a3b8; letter-spacing: 0.12em; }
+  </style>
+  <div id="root" data-composition-id="cierre" data-width="1920" data-height="1080">
+    <div id="ci-claim" class="clip" data-start="0" data-duration="2.2" data-track-index="2">
+      <div><span>Todo</span> <span>el</span> <span>conocimiento</span> <span>de</span> <span>la</span> <span>Línea</span> <span>4,</span></div>
+      <div><span>en</span> <span class="acc">una</span> <span class="acc">app.</span></div>
+    </div>
+    <div id="ci-dot" class="clip" data-start="2.1" data-duration="2.9" data-track-index="3" style="color:#22c55e"></div>
+    <div id="ci-word" class="clip" data-start="2.5" data-duration="2.5" data-track-index="4">
+      <span>A</span><span>R</span><span>I</span><span>A</span>
+    </div>
+    <div id="ci-sub" class="clip" data-start="2.9" data-duration="2.1" data-track-index="5">LINE 4 — SPUNTECH</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#ci-claim span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.08, ease: "power2.out" }, 0.05);
+      tl.to("#ci-claim > div", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 1.95);
+      // the green "running" LED rolls in and becomes ARIA's mark
+      tl.fromTo("#ci-dot", { x: -760, rotation: -200 }, { x: 0, rotation: 0, duration: 0.6, ease: "expo.out" }, 2.1);
+      tl.fromTo("#ci-dot", { borderColor: "#22c55e", color: "#22c55e" }, { borderColor: "#22d3ee", color: "#22d3ee", duration: 0.3, ease: "power2.inOut" }, 2.45);
+      tl.fromTo("#ci-word span", { opacity: 0 }, { opacity: 1, duration: 0.01, stagger: 0.1, ease: "none" }, 2.55);
+      tl.fromTo("#ci-sub", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, 2.95);
+      window.__timelines["cierre"] = tl;
+    })();
+  </script>
+</template>
