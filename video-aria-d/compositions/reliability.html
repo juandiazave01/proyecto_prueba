@@ -8,8 +8,8 @@
     .frame .bar b { margin-left: 18px; font: 500 18px "IBM Plex Mono", monospace; color: #94a3b8; }
     .frame .shot { position: relative; width: 1600px; height: 1000px; overflow: hidden; }
     .frame .shot img { position: absolute; left: 0; top: 0; width: 1600px; height: 1000px; }
-    .tab { position: absolute; left: 960px; top: 70px; font: 700 64px "IBM Plex Mono", monospace; letter-spacing: 0.04em; }
-    .panel { position: absolute; left: 960px; top: 190px; width: 880px; }
+    .tab { position: absolute; left: 520px; top: 70px; font: 700 64px "IBM Plex Mono", monospace; letter-spacing: 0.04em; }
+    .panel { position: absolute; left: 520px; top: 190px; width: 880px; }
     .card { background: #0f172a; border: 2px solid #1e293b; border-radius: 12px; padding: 30px 36px; }
     .k { font: 600 28px "IBM Plex Mono", monospace; color: #64748b; letter-spacing: 0.08em; }
     .v { font: 600 34px "Inter", sans-serif; color: #e2e8f0; margin-top: 4px; line-height: 1.25; }
@@ -57,7 +57,7 @@
       const out = (sel, t) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.22, ease: "power3.in" }, t);
       tl.fromTo("#rl-frame", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 0);
       tl.fromTo("#rl-img", { scale: 1, transformOrigin: "45% 30%" }, { scale: 1.25, duration: 1.4, ease: "power2.inOut" }, 0.2);
-      tl.to("#rl-frame", { x: -90, y: 250, scale: 0.52, duration: 0.8, ease: "power2.inOut" }, 1.30);
+      tl.to("#rl-frame", { x: 360, y: 200, scale: 0.55, opacity: 0, filter: "blur(10px)", duration: 0.7, ease: "power3.in" }, 1.30);
       words("#rl-tab", 1.90);
       tl.fromTo("#rl-a", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.55, ease: "expo.out" }, 2.10);
       tl.fromTo("#rl-k1", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 3.70);
