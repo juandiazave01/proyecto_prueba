@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="aria.css">
 </head>
 <body>
 
@@ -1416,15 +1417,90 @@ END</code></pre>
              cabinet-by-cabinet PLC tag reference, safety relay documentation, and electrical drawing
              links, all through plain-language questions instead of digging through binders and PDFs.</p>
 
-          <div class="aria-demo">
-            <div class="aria-demo-topbar">
+          <div class="aria-console" id="aria-console">
+            <div class="ac-topbar">
               <span class="led led-on pulse" aria-hidden="true"></span>
-              <span class="aria-demo-title">ARIA · Maintenance Copilot</span>
-              <span class="aria-demo-rec">● DEMO</span>
+              <div class="ac-brand">
+                <span class="ac-title">ARIA</span>
+                <span class="ac-subtitle">Maintenance Copilot · Line 4</span>
+              </div>
+              <div class="ac-status">
+                <span class="ac-chip ac-chip-ok">PLC LINK OK</span>
+                <span class="ac-chip">SHIFT B</span>
+                <span class="ac-chip ac-chip-demo">● DEMO</span>
+              </div>
             </div>
-            <div class="aria-demo-chat" id="aria-demo-chat"></div>
-            <p class="aria-demo-caption">Auto-playing simulated demo — illustrative example with
-               fictional equipment and tag names, not real production data.</p>
+
+            <div class="ac-views" role="tablist" aria-label="ARIA views">
+              <button type="button" class="ac-view-btn active" role="tab" aria-selected="true" data-ac-view="copilot">Copilot</button>
+              <button type="button" class="ac-view-btn" role="tab" aria-selected="false" data-ac-view="reports">Reports <span class="ac-badge" id="ac-flag-count" hidden>0</span></button>
+              <button type="button" class="ac-autoplay" id="ac-autoplay" aria-pressed="false">▶ Auto demo</button>
+            </div>
+
+            <!-- COPILOT VIEW -->
+            <div class="ac-view active" data-ac-view="copilot" role="tabpanel">
+              <div class="ac-layout">
+                <nav class="ac-modules" aria-label="ARIA modules">
+                  <button type="button" class="ac-mod active" data-mod="troubleshoot"><span class="ac-mod-ico" aria-hidden="true">⚙</span><span>Troubleshoot</span></button>
+                  <button type="button" class="ac-mod" data-mod="tags"><span class="ac-mod-ico" aria-hidden="true">#</span><span>PLC Tags</span></button>
+                  <button type="button" class="ac-mod" data-mod="safety"><span class="ac-mod-ico" aria-hidden="true">⛨</span><span>Safety</span></button>
+                  <button type="button" class="ac-mod" data-mod="drawings"><span class="ac-mod-ico" aria-hidden="true">⌁</span><span>Drawings</span></button>
+                  <button type="button" class="ac-mod" data-mod="log"><span class="ac-mod-ico" aria-hidden="true">✎</span><span>Shift Log</span></button>
+                </nav>
+                <div class="ac-main">
+                  <div class="ac-chat" id="ac-chat" aria-live="polite"></div>
+                  <div class="ac-suggest" id="ac-suggest" aria-label="Suggested questions"></div>
+                  <form class="ac-input" id="ac-form" autocomplete="off">
+                    <input type="text" id="ac-input" placeholder="Ask ARIA… e.g. “tag for dryer zone 3”" aria-label="Ask ARIA a question">
+                    <button type="submit" class="ac-send" aria-label="Send">➤</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- REPORTS VIEW -->
+            <div class="ac-view" data-ac-view="reports" role="tabpanel" hidden>
+              <div class="ac-report-tabs">
+                <button type="button" class="ac-rtab active" data-rtab="shift">Shift report</button>
+                <button type="button" class="ac-rtab" data-rtab="patterns">Failure patterns</button>
+                <button type="button" class="ac-rtab" data-rtab="actions">Open actions</button>
+              </div>
+
+              <div class="ac-rpanel active" data-rtab="shift">
+                <div class="ac-kpis" id="ac-kpis"></div>
+                <div class="ac-filter" id="ac-filter">
+                  <button type="button" class="ac-fbtn active" data-filter="all">All</button>
+                  <button type="button" class="ac-fbtn" data-filter="Electrical">Electrical</button>
+                  <button type="button" class="ac-fbtn" data-filter="Mechanical">Mechanical</button>
+                  <button type="button" class="ac-fbtn" data-filter="Safety">Safety</button>
+                </div>
+                <div class="ac-table-wrap">
+                  <table class="ac-table">
+                    <thead><tr><th>Time</th><th>Asset</th><th>Event</th><th>Type</th><th>Downtime</th></tr></thead>
+                    <tbody id="ac-log-body"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="ac-rpanel" data-rtab="patterns">
+                <p class="ac-rhint">Interventions per asset, last 30 days — click a bar to see its events.</p>
+                <div class="ac-bars" id="ac-bars"></div>
+                <div class="ac-bar-detail" id="ac-bar-detail"></div>
+              </div>
+
+              <div class="ac-rpanel" data-rtab="actions">
+                <ul class="ac-actions" id="ac-actions"></ul>
+              </div>
+
+              <div class="ac-report-foot">
+                <button type="button" class="ac-btn" data-report="copy">⧉ Copy summary</button>
+                <button type="button" class="ac-btn" data-report="download">⤓ Download .txt</button>
+                <button type="button" class="ac-btn" data-report="print">⎙ Print</button>
+              </div>
+            </div>
+
+            <div class="ac-toast" id="ac-toast" role="status" aria-live="polite"></div>
+            <p class="ac-caption">Interactive simulated demo — fictional equipment, tags and data, not real production information.</p>
           </div>
 
           <p><strong>What it does:</strong></p>
@@ -1971,5 +2047,6 @@ END</code></pre>
 </footer>
 
 <script src="script.js"></script>
+<script src="aria.js"></script>
 </body>
 </html>
